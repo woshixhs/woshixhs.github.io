@@ -13,7 +13,44 @@ tags: iOS推送
 	证书分为开发证书, Adhoc证书, 发布版证书.
 
 #####iOS 推送证书过期处理
-	证书过一年会过期,需要重新revoke生成,最好csr文件是同一个.
+	证书过一年会过期,需要重新revoke生成,最好csr文件是同一个.推送只是跟push APNS token有关系，跟其他证书无关.(特别是服务端)
+
+######iOS 代码运行逻辑
+	推送发生的时候，有3种情况
+	- 前台运行
+	  这种情况下，程序不会有任何提示音，程序会执行以下的代码：
+			  - (void)application:(UIApplication *)application 
+			  - didReceiveRemoteNotification:(NSDictionary *)userInfo  
+			  - fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
+	             //userInfo 会有推送的内容
+             }
+
+	- 后台运行
+		会有推送提示声音，内容等。这个时候，会有3种行为，可以重新进入到程序，2种不同的表现形式
+		 - 点击程序icon，双击home，点击程序这2种行为
+		   这种情况，不执行任何代码。
+		 - 通过推送消息栏，进入程序，程序会执行以下的代码：
+		   - (void)application:(UIApplication *)application 
+		   - didReceiveRemoteNotification:(NSDictionary *)userInfo 
+		   - fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+				//userInfo 会有推送的内容
+		  }
+	- 程序关闭
+	  会有推送提示声音，内容等。这个时候如果按照正常的方式进入程序，一切都一样，如果是通过通知栏的方式进入的程序，会有以下的区别。首先程序启动的时候，
+	  (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+	  launchOptions 会有值，可以使用key，判断是远程推送的key，UIRemoteNotificationType
+	  }
+	  接下来，继续会调用以下的代码：
+	  (void)application:(UIApplication *)application 
+		   didReceiveRemoteNotification:(NSDictionary *)userInfo 
+		   fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+				//userInfo 会有推送的内容
+		  }
+	  
+######iOS 推送提示声音如何修改
+	 1. 服务端， 在payload中，json串中,  sound: push.m4a,  
+	 2. iOS, 添加跟服务端一样的声音文件到项目工程中即可
+	 只要完成2项，就可以完成替换声音
 
 #####iOS推送测试
 	可以使用Mac 上的PushMeBaby做测试，不过目前测试失败，估计API升级导致的原因。
@@ -33,12 +70,12 @@ Java推送用的比较多的开源lib,[java-apns](https://github.com/notnoop/jav
  - **java-apns**
       notnoop的Java APNS就要强大很多，目前它应该是使用最多的Java类库。随着使用的加深，发现它有很多不完善之处。最严重的问题是，运行一段时间后就死掉了，通知再也发不出去了，但重启下就又恢复了。经查，应该是死锁了，通知堆积在内存中并没有真正发出去。这对于对消息送达率和及时性要求非常高的聊天软件来说，是不能忍受的。
       
-       可以使用java-apns的项目,用来测试iOS 的推送, 比较方便.
-
+       可以使用java-apns的项目,用来测试iOS 的推送, 比较方便.遇到的问题，会经常性出现，ssl handle建立失败，被对方关闭的问题。
+ - **pushy**
+     测试下来，当有很多数据的情况下，会有2~5分钟的延迟推送现象发生。
 
 ----------
 
 目前,暂时没有分析其他java lib, 目前有[dbay-apns-for-java](https://github.com/RamosLi/dbay-apns-for-java) .[pushy](https://github.com/relayrides/pushy), 后续需要测试分析,性能,
 主要是对长链接的处理.(未完待续)
-
 
