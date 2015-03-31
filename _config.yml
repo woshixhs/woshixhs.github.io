@@ -71,5 +71,6 @@ stylus:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@gitcafe.com:woshixhs/woshixhs.git
-  branch: gitcafe-pages 
+  repo: 
+    github: git@github.com:woshixhs/woshixhs.github.io.git,master
+    gitcafe: git@gitcafe.com:woshixhs/woshixhs.git,gitcafe-pages
