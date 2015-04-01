@@ -8,6 +8,7 @@ tags:
 	git init
 #####**添加远程仓库**
 	git remote add origin git@server-name:path/repo-name.git  #添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+	通过这个方法,可以对同一个仓库,添加多个远程仓库
 #####**查看远程仓库**
 	git remote
 	git remove -v
@@ -16,16 +17,21 @@ tags:
 #####**本地提交到仓库**
 	git commit
 #####**推送分支到远程**
-	git push, 
-	git push origin master,一般默认推送到master分支
+	git push <远程主机名> <本地分支名>:<远程分支名>
+	git push, 后续参数都省略,或是已经本地跟远程已经建立关联
+	git push origin master,一般默认推送到master分支, 本地分支跟远程分支同名
 #####**获取远程分支**
 	git clone,  获取远程分支的代码
 	git pull, 获取当前分支的最新代码
 	git pull = git fetch + merge to local
+	git fetch origin
+	git merge origin/next
+	git pull <远程主机名> <远程分支名>:<本地分支名> 
 	git checkout , 切换分支
 	git checkout -b dev origin/dev, #创建远程origin的dev分支到本地，并命名为dev
 	git branch --set-upstream branch-name origin/branch-name，可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。
 #####**删除远程分支**
+	git push <远程主机名> --delete <远程分知名> 
 	git push origin --delete bugfix
 #####删除本地分支
 	git branch -d xxx, 
@@ -33,8 +39,15 @@ tags:
 	git branch  本地
 	git branch -r 远程
 	git branch -a 所有
+#####**回撤版本**
+	
+
+ - 还没add到stash
+ - 已经commit到stash
+ - 已经push
 
 
+ 
 ----------
 
 
@@ -42,6 +55,7 @@ tags:
 
  - http://wuchong.me/blog/2015/03/30/git-useful-skills/#more
  - http://robbinfan.com/blog/34/git-common-command
+ - [廖雪峰的Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
  - [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
  - [Git 常用命令速查表](https://gitcafe.com/GitCafe/Help/wiki/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8)
 
