@@ -1,9 +1,10 @@
 title: "linux android device 调试"
 date: 2015-04-17 22:36:32
 categories: Android
-tags:Android USB
+tags: Android USB
 
 ----------
+
 #####**Android Device调试**
 
  - windows
