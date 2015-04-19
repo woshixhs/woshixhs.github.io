@@ -1,6 +1,6 @@
 title: "IDEA Using Ionic Cordova "
 date: 2015-04-18 23:10:29
-categories: Android
+categories: ionic
 tags: Web
 
 ----------
