@@ -4,3 +4,7 @@ categories:
 tags:
 
 ----------
+
+
+http://onevcat.com/2014/01/black-magic-in-macro/
+http://www.cnblogs.com/daiweilai/p/4234336.html
