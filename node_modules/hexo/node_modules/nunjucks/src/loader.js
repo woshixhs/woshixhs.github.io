@@ -1,3 +1,6 @@
+'use strict';
+
+var path = require('path');
 var Obj = require('./object');
 var lib = require('./lib');
 
@@ -16,6 +19,14 @@ var Loader = Obj.extend({
                 listener.apply(null, args);
             });
         }
+    },
+
+    resolve: function(from, to) {
+        return path.resolve(path.dirname(from), to);
+    },
+
+    isRelative: function(filename) {
+        return (filename.indexOf('./') === 0 || filename.indexOf('../') === 0);
     }
 });
 
