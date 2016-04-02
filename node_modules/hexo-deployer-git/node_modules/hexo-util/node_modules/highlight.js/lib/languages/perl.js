@@ -31,24 +31,21 @@ module.exports = function(hljs) {
     className: 'variable',
     variants: [
       {begin: /\$\d/},
-      {begin: /[\$\%\@](\^\w\b|#\w+(\:\:\w+)*|{\w+}|\w+(\:\:\w*)*)/},
-      {begin: /[\$\%\@][^\s\w{]/, relevance: 0}
+      {begin: /[\$%@](\^\w\b|#\w+(::\w+)*|{\w+}|\w+(::\w*)*)/},
+      {begin: /[\$%@][^\s\w{]/, relevance: 0}
     ]
-  };
-  var COMMENT = {
-    className: 'comment',
-    begin: '^(__END__|__DATA__)', end: '\\n$',
-    relevance: 5
   };
   var STRING_CONTAINS = [hljs.BACKSLASH_ESCAPE, SUBST, VAR];
   var PERL_DEFAULT_CONTAINS = [
     VAR,
     hljs.HASH_COMMENT_MODE,
-    COMMENT,
-    {
-      className: 'comment',
-      begin: '^\\=\\w', end: '\\=cut', endsWithParent: true
-    },
+    hljs.COMMENT(
+      '^\\=\\w',
+      '\\=cut',
+      {
+        endsWithParent: true
+      }
+    ),
     METHOD,
     {
       className: 'string',
@@ -112,7 +109,6 @@ module.exports = function(hljs) {
       relevance: 0,
       contains: [
         hljs.HASH_COMMENT_MODE,
-        COMMENT,
         {
           className: 'regexp',
           begin: '(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*',
@@ -135,6 +131,18 @@ module.exports = function(hljs) {
       className: 'operator',
       begin: '-\\w\\b',
       relevance: 0
+    },
+    {
+      begin: "^__DATA__$",
+      end: "^__END__$",
+      subLanguage: 'mojolicious',
+      contains: [
+        {
+            begin: "^@@.*",
+            end: "$",
+            className: "comment"
+        }
+      ]
     }
   ];
   SUBST.contains = PERL_DEFAULT_CONTAINS;

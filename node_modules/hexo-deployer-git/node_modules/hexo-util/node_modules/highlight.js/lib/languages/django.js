@@ -1,7 +1,7 @@
 module.exports = function(hljs) {
   var FILTER = {
     className: 'filter',
-    begin: /\|[A-Za-z]+\:?/,
+    begin: /\|[A-Za-z]+:?/,
     keywords:
       'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags ' +
       'filesizeformat escape linebreaks length_is ljust rjust cut urlize fix_ampersands ' +
@@ -20,16 +20,10 @@ module.exports = function(hljs) {
   return {
     aliases: ['jinja'],
     case_insensitive: true,
-    subLanguage: 'xml', subLanguageMode: 'continuous',
+    subLanguage: 'xml',
     contains: [
-      {
-        className: 'comment',
-        begin: /\{%\s*comment\s*%}/, end: /\{%\s*endcomment\s*%}/
-      },
-      {
-        className: 'comment',
-        begin: /\{#/, end: /#}/
-      },
+      hljs.COMMENT(/\{%\s*comment\s*%}/, /\{%\s*endcomment\s*%}/),
+      hljs.COMMENT(/\{#/, /#}/),
       {
         className: 'template_tag',
         begin: /\{%/, end: /%}/,

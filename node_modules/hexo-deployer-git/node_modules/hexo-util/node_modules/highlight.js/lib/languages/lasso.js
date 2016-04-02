@@ -4,12 +4,12 @@ module.exports = function(hljs) {
   var LASSO_CLOSE_RE = '\\]|\\?>';
   var LASSO_KEYWORDS = {
     literal:
-      'true false none minimal full all void and or not ' +
+      'true false none minimal full all void ' +
       'bw nbw ew new cn ncn lt lte gt gte eq neq rx nrx ft',
     built_in:
       'array date decimal duration integer map pair string tag xml null ' +
       'boolean bytes keyword list locale queue set stack staticarray ' +
-      'local var variable global data self inherited',
+      'local var variable global data self inherited currentcapture givenblock',
     keyword:
       'error_code error_msg error_pop error_push error_reset cache ' +
       'database_names database_schemanames database_tablenames define_tag ' +
@@ -30,11 +30,13 @@ module.exports = function(hljs) {
       'skip split_thread sum take thread to trait type where with ' +
       'yield yieldhome'
   };
-  var HTML_COMMENT = {
-    className: 'comment',
-    begin: '<!--', end: '-->',
-    relevance: 0
-  };
+  var HTML_COMMENT = hljs.COMMENT(
+    '<!--',
+    '-->',
+    {
+      relevance: 0
+    }
+  );
   var LASSO_NOPROCESS = {
     className: 'preprocessor',
     begin: '\\[noprocess\\]',
@@ -54,14 +56,13 @@ module.exports = function(hljs) {
     begin: '\'' + LASSO_IDENT_RE + '\''
   };
   var LASSO_CODE = [
+    hljs.COMMENT(
+      '/\\*\\*!',
+      '\\*/'
+    ),
     hljs.C_LINE_COMMENT_MODE,
-    {
-      className: 'javadoc',
-      begin: '/\\*\\*!', end: '\\*/',
-      contains: [hljs.PHRASAL_WORDS_MODE]
-    },
     hljs.C_BLOCK_COMMENT_MODE,
-    hljs.inherit(hljs.C_NUMBER_MODE, {begin: hljs.C_NUMBER_RE + '|(-?infinity|nan)\\b'}),
+    hljs.inherit(hljs.C_NUMBER_MODE, {begin: hljs.C_NUMBER_RE + '|(infinity|nan)\\b'}),
     hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
     hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
     {
@@ -89,7 +90,7 @@ module.exports = function(hljs) {
       className: 'attribute',
       variants: [
         {
-          begin: '-' + hljs.UNDERSCORE_IDENT_RE,
+          begin: '-(?!infinity)' + hljs.UNDERSCORE_IDENT_RE,
           relevance: 0
         },
         {
@@ -105,7 +106,7 @@ module.exports = function(hljs) {
           contains: [LASSO_DATAMEMBER]
         },
         {
-          begin: ':=|/(?!\\w)=?|[-+*%=<>&|!?\\\\]+',
+          begin: '->|\\\\|&&?|\\|\\||!(?!=|>)|(and|or|not)\\b',
           relevance: 0
         }
       ]

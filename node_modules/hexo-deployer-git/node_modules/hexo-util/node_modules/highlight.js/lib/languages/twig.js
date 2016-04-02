@@ -18,7 +18,7 @@ module.exports = function(hljs) {
 
   var FILTER = {
     className: 'filter',
-    begin: /\|[A-Za-z]+\:?/,
+    begin: /\|[A-Za-z_]+:?/,
     keywords:
       'abs batch capitalize convert_encoding date date_modify default ' +
       'escape first format join json_encode keys last length lower ' +
@@ -37,12 +37,9 @@ module.exports = function(hljs) {
   return {
     aliases: ['craftcms'],
     case_insensitive: true,
-    subLanguage: 'xml', subLanguageMode: 'continuous',
+    subLanguage: 'xml',
     contains: [
-      {
-        className: 'comment',
-        begin: /\{#/, end: /#}/
-      },
+      hljs.COMMENT(/\{#/, /#}/),
       {
         className: 'template_tag',
         begin: /\{%/, end: /%}/,

@@ -25,7 +25,7 @@ module.exports = function(hljs) {
     className: 'title',
     begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
     relevance: 0
-  }
+  };
 
   var CLASS = {
     className: 'class',
@@ -36,19 +36,9 @@ module.exports = function(hljs) {
 
   var METHOD = {
     className: 'function',
-    beginKeywords: 'def val',
+    beginKeywords: 'def',
     end: /[:={\[(\n;]/,
     contains: [NAME]
-  };
-
-  var JAVADOC = {
-    className: 'javadoc',
-    begin: '/\\*\\*', end: '\\*/',
-    contains: [{
-      className: 'javadoctag',
-      begin: '@[A-Za-z]+'
-    }],
-    relevance: 10
   };
 
   return {

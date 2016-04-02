@@ -11,9 +11,6 @@ module.exports = function(hljs) {
       'true false null undefined ' +
       // Coffee literals
       'yes no on off',
-    reserved:
-      'case default function var void with const let enum export import native ' +
-      '__hasProp __extends __slice __bind __indexOf',
     built_in:
       'npm require console print module global window document'
   };
@@ -96,11 +93,7 @@ module.exports = function(hljs) {
     keywords: KEYWORDS,
     illegal: /\/\*/,
     contains: EXPRESSIONS.concat([
-      {
-        className: 'comment',
-        begin: '###', end: '###',
-        contains: [hljs.PHRASAL_WORDS_MODE]
-      },
+      hljs.COMMENT('###', '###'),
       hljs.HASH_COMMENT_MODE,
       {
         className: 'function',

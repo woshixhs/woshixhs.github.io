@@ -1,9 +1,10 @@
 module.exports = function(hljs) {
-  var COMMENT = {
-    className: 'comment',
-    begin: /@?rem\b/, end: /$/,
-    relevance: 10
-  };
+  var COMMENT = hljs.COMMENT(
+    /@?rem\b/, /$/,
+    {
+      relevance: 10
+    }
+  );
   var LABEL = {
     className: 'label',
     begin: '^\\s*[A-Za-z._?][A-Za-z0-9_$#@~.?]*(:|\\s+label)',
@@ -12,6 +13,7 @@ module.exports = function(hljs) {
   return {
     aliases: ['bat', 'cmd'],
     case_insensitive: true,
+    illegal: /\/\*/,
     keywords: {
       flow: 'if else goto for in do call exit not exist errorlevel defined',
       operator: 'equ neq lss leq gtr geq',
@@ -22,7 +24,7 @@ module.exports = function(hljs) {
         'comp compact convert date dir diskcomp diskcopy doskey erase fs ' +
         'find findstr format ftype graftabl help keyb label md mkdir mode more move path ' +
         'pause print popd pushd promt rd recover rem rename replace restore rmdir shift' +
-        'sort start subst time title tree type ver verify vol',
+        'sort start subst time title tree type ver verify vol'
     },
     contains: [
       {

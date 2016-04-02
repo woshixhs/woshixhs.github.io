@@ -16,7 +16,7 @@ https://highlightjs.org/
 
     // Finally register the global hljs with AMD.
     if(typeof define === 'function' && define.amd) {
-      define([], function() {
+      define('hljs', [], function() {
         return window.hljs;
       });
     }
@@ -39,21 +39,39 @@ https://highlightjs.org/
     return match && match.index == 0;
   }
 
+  function isNotHighlighted(language) {
+    return (/^(no-?highlight|plain|text)$/i).test(language);
+  }
+
   function blockLanguage(block) {
-    var classes = (block.className + ' ' + (block.parentNode ? block.parentNode.className : '')).split(/\s+/);
-    classes = classes.map(function(c) {return c.replace(/^lang(uage)?-/, '');});
-    return classes.filter(function(c) {return getLanguage(c) || /no(-?)highlight/.test(c);})[0];
+    var i, match, length,
+        classes = block.className + ' ';
+
+    classes += block.parentNode ? block.parentNode.className : '';
+
+    // language-* takes precedence over non-prefixed class names
+    match = (/\blang(?:uage)?-([\w-]+)\b/i).exec(classes);
+    if (match) {
+      return getLanguage(match[1]) ? match[1] : 'no-highlight';
+    }
+
+    classes = classes.split(/\s+/);
+    for (i = 0, length = classes.length; i < length; i++) {
+      if (getLanguage(classes[i]) || isNotHighlighted(classes[i])) {
+        return classes[i];
+      }
+    }
   }
 
   function inherit(parent, obj) {
-    var result = {};
-    for (var key in parent)
+    var result = {}, key;
+    for (key in parent)
       result[key] = parent[key];
     if (obj)
-      for (var key in obj)
+      for (key in obj)
         result[key] = obj[key];
     return result;
-  };
+  }
 
   /* Stream merging */
 
@@ -169,7 +187,7 @@ https://highlightjs.org/
     }
 
     function langRe(value, global) {
-      return RegExp(
+      return new RegExp(
         reStr(value),
         'm' + (language.case_insensitive ? 'i' : '') + (global ? 'g' : '')
       );
@@ -203,7 +221,7 @@ https://highlightjs.org/
         }
         mode.keywords = compiled_keywords;
       }
-      mode.lexemesRe = langRe(mode.lexemes || /\b[A-Za-z0-9_]+\b/, true);
+      mode.lexemesRe = langRe(mode.lexemes || /\b\w+\b/, true);
 
       if (parent) {
         if (mode.beginKeywords) {
@@ -249,7 +267,7 @@ https://highlightjs.org/
         .concat([mode.terminator_end, mode.illegal])
         .map(reStr)
         .filter(Boolean);
-      mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : {exec: function(s) {return null;}};
+      mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : {exec: function(/*s*/) {return null;}};
     }
 
     compileMode(language);
@@ -276,6 +294,9 @@ https://highlightjs.org/
 
     function endOfMode(mode, lexeme) {
       if (testRe(mode.endRe, lexeme)) {
+        while (mode.endsParent && mode.parent) {
+          mode = mode.parent;
+        }
         return mode;
       }
       if (mode.endsWithParent) {
@@ -325,10 +346,15 @@ https://highlightjs.org/
     }
 
     function processSubLanguage() {
-      if (top.subLanguage && !languages[top.subLanguage]) {
+      var explicit = typeof top.subLanguage == 'string';
+      if (explicit && !languages[top.subLanguage]) {
         return escape(mode_buffer);
       }
-      var result = top.subLanguage ? highlight(top.subLanguage, mode_buffer, true, continuations[top.subLanguage]) : highlightAuto(mode_buffer);
+
+      var result = explicit ?
+                   highlight(top.subLanguage, mode_buffer, true, continuations[top.subLanguage]) :
+                   highlightAuto(mode_buffer, top.subLanguage.length ? top.subLanguage : undefined);
+
       // Counting embedded language score towards the host language may be disabled
       // with zeroing the containing mode relevance. Usecase in point is Markdown that
       // allows XML everywhere and makes every XML snippet to have a much larger Markdown
@@ -336,7 +362,7 @@ https://highlightjs.org/
       if (top.relevance > 0) {
         relevance += result.relevance;
       }
-      if (top.subLanguageMode == 'continuous') {
+      if (explicit) {
         continuations[top.subLanguage] = result.top;
       }
       return buildSpan(result.language, result.value, false, true);
@@ -420,8 +446,8 @@ https://highlightjs.org/
     compileLanguage(language);
     var top = continuation || language;
     var continuations = {}; // keep continuations for sub-languages
-    var result = '';
-    for(var current = top; current != language; current = current.parent) {
+    var result = '', current;
+    for(current = top; current != language; current = current.parent) {
       if (current.className) {
         result = buildSpan(current.className, '', true) + result;
       }
@@ -439,11 +465,11 @@ https://highlightjs.org/
         index = match.index + count;
       }
       processLexeme(value.substr(index));
-      for(var current = top; current.parent; current = current.parent) { // close dangling modes
+      for(current = top; current.parent; current = current.parent) { // close dangling modes
         if (current.className) {
           result += '</span>';
         }
-      };
+      }
       return {
         relevance: relevance,
         value: result,
@@ -509,7 +535,7 @@ https://highlightjs.org/
   */
   function fixMarkup(value) {
     if (options.tabReplace) {
-      value = value.replace(/^((<[^>]+>|\t)+)/gm, function(match, p1, offset, s) {
+      value = value.replace(/^((<[^>]+>|\t)+)/gm, function(match, p1 /*..., offset, s*/) {
         return p1.replace(/\t/g, options.tabReplace);
       });
     }
@@ -523,11 +549,11 @@ https://highlightjs.org/
     var language = currentLang ? aliases[currentLang] : resultLang,
         result   = [prevClassName.trim()];
 
-    if (!prevClassName.match(/(\s|^)hljs(\s|$)/)) {
+    if (!prevClassName.match(/\bhljs\b/)) {
       result.push('hljs');
     }
 
-    if (language) {
+    if (prevClassName.indexOf(language) === -1) {
       result.push(language);
     }
 
@@ -540,7 +566,7 @@ https://highlightjs.org/
   */
   function highlightBlock(block) {
     var language = blockLanguage(block);
-    if (/no(-?)highlight/.test(language))
+    if (isNotHighlighted(language))
         return;
 
     var node;
@@ -624,6 +650,7 @@ https://highlightjs.org/
   }
 
   function getLanguage(name) {
+    name = (name || '').toLowerCase();
     return languages[name] || languages[aliases[name]];
   }
 
@@ -642,8 +669,8 @@ https://highlightjs.org/
   hljs.inherit = inherit;
 
   // Common regexps
-  hljs.IDENT_RE = '[a-zA-Z][a-zA-Z0-9_]*';
-  hljs.UNDERSCORE_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_]*';
+  hljs.IDENT_RE = '[a-zA-Z]\\w*';
+  hljs.UNDERSCORE_IDENT_RE = '[a-zA-Z_]\\w*';
   hljs.NUMBER_RE = '\\b\\d+(\\.\\d+)?';
   hljs.C_NUMBER_RE = '(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)'; // 0x..., 0..., decimal, float
   hljs.BINARY_NUMBER_RE = '\\b(0b[01]+)'; // 0b...
@@ -666,23 +693,28 @@ https://highlightjs.org/
     contains: [hljs.BACKSLASH_ESCAPE]
   };
   hljs.PHRASAL_WORDS_MODE = {
-    begin: /\b(a|an|the|are|I|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such)\b/
+    begin: /\b(a|an|the|are|I|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|like)\b/
   };
-  hljs.C_LINE_COMMENT_MODE = {
-    className: 'comment',
-    begin: '//', end: '$',
-    contains: [hljs.PHRASAL_WORDS_MODE]
+  hljs.COMMENT = function (begin, end, inherits) {
+    var mode = hljs.inherit(
+      {
+        className: 'comment',
+        begin: begin, end: end,
+        contains: []
+      },
+      inherits || {}
+    );
+    mode.contains.push(hljs.PHRASAL_WORDS_MODE);
+    mode.contains.push({
+      className: 'doctag',
+      begin: "(?:TODO|FIXME|NOTE|BUG|XXX):",
+      relevance: 0
+    });
+    return mode;
   };
-  hljs.C_BLOCK_COMMENT_MODE = {
-    className: 'comment',
-    begin: '/\\*', end: '\\*/',
-    contains: [hljs.PHRASAL_WORDS_MODE]
-  };
-  hljs.HASH_COMMENT_MODE = {
-    className: 'comment',
-    begin: '#', end: '$',
-    contains: [hljs.PHRASAL_WORDS_MODE]
-  };
+  hljs.C_LINE_COMMENT_MODE = hljs.COMMENT('//', '$');
+  hljs.C_BLOCK_COMMENT_MODE = hljs.COMMENT('/\\*', '\\*/');
+  hljs.HASH_COMMENT_MODE = hljs.COMMENT('#', '$');
   hljs.NUMBER_MODE = {
     className: 'number',
     begin: hljs.NUMBER_RE,

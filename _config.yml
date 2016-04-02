@@ -72,7 +72,5 @@ stylus:
 deploy:
   type: git
   repo: 
-    github: git@github.com:woshixhs/woshixhs.github.io.git,master
-    #gitcafe: git@gitcafe.com:woshixhs/woshixhs.git,gitcafe-pages
-	coding: git@git.coding.net:woshixhs/woshixhs.git,master
-
+  	coding: git@git.coding.net:woshixhs/woshixhs.git
+    github: git@github.com:woshixhs/woshixhs.github.io.git
