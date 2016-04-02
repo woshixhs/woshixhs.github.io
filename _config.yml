@@ -72,5 +72,5 @@ stylus:
 deploy:
   type: git
   repo: 
-  	coding: git@git.coding.net:woshixhs/woshixhs.git
     github: git@github.com:woshixhs/woshixhs.github.io.git
+    coding: git@git.coding.net:woshixhs/woshixhs.git
