@@ -1,7 +1,7 @@
-title: "git account配置"
+title: "git ssh key配置"
 date: 2015-03-24 21:26:04
 categories: git
-tags:  sshkey配置
+tags:  ssh key
 
 ----------
 #####git的配置
