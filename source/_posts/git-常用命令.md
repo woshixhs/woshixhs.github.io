@@ -42,6 +42,18 @@ tags:
 	git branch --set-upstream branch-name origin/branch-name，
 	可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。
 
+#####**合并远程**
+
+	git merge <branch>
+	
+用于合并指定分支到当前分支,
+是Fast-forward合并分支，这种模式下，删除分支后，会丢掉分支信息。
+
+	git merge --no-ff -m "..." <branch>
+
+--no-ff参数，表示禁用Fast forward
+本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
+
 #####**删除远程分支**
 	git push <远程主机名> --delete <远程分知名> 
 	git push origin --delete bugfix
