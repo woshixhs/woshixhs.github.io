@@ -27,6 +27,7 @@ tags: Android USB
 
 
 #####**参考文档**  
+http://my.oschina.net/u/260921/blog/469626
 http://www.oschina.net/question/4873_27142
 http://wujianjun.iteye.com/blog/1748423
 https://developer.android.com/tools/device.html
