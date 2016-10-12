@@ -5,9 +5,17 @@ tags:
 
 ----------
 #####**Markdown语法**
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-http://wowubuntu.com/markdown/
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+
+[Markdown 语法说明 (简体中文版)](http://wowubuntu.com/markdown/)
+
+[MarkDown 语法说明](http://www.markdown.cn/)
+
 
 #####**Markdown在线工具**
+
 https://stackedit.io/editor
+
+
 https://www.zybuluo.com/mdeditor
