@@ -11,3 +11,5 @@ http://www.tanhao.me/talk/1287.html/
 https://segmentfault.com/a/1190000001732729
 http://blog.csdn.net/abby_sheen/article/details/7817198
 http://my.oschina.net/shede333/blog/470377?fromerr=wUITdR9j
+
+sudo chown -R $(whoami) /usr/local
