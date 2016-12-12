@@ -1,5 +1,5 @@
 title: webpack资料
-categories: 前端
+categories: web前端
 tags: webpack
 date: 2016-12-12 17:01:14
 ---
