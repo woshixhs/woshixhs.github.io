@@ -5,7 +5,7 @@ tags:
 ---
 
 
-* **[nvm官网](nvm)**
+* **[nvm官网](https://docs.npmjs.com/)**
 
 * **[如何更新NVM](http://www.jianshu.com/p/045df8e20ebe)**
 
