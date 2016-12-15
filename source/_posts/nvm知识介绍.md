@@ -1,5 +1,5 @@
-title: vnm知识介绍
-categories: vnm
+title: nvm知识介绍
+categories: nvm
 date: 2016-12-15 14:14:43
 tags:
 ---
