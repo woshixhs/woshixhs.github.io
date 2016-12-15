@@ -62,4 +62,4 @@ n stable
 
 * [淘宝NPM镜像](https://npm.taobao.org/)
 	
-
+* [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
