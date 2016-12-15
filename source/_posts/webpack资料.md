@@ -21,15 +21,30 @@ date: 2016-12-12 17:01:14
 	 
 	 问题：
 	 
-	 *  1: Mac 平台安装webpack, webpack命令不能执行，需要设置PATH
+	 *  1: Mac 平台安装webpack(本地安装), webpack命令不能执行，需要设置PATH
 	 	
 	 	
-	 	在测试环境下，使用shell的临时环境变量，
+	 	使用shell的临时环境变量，（./node-module/.bin/）
 	 	
 	 	
 	 	```
 	 	export PATH=$PATH:(path)
 	 	```
+
+	* 2: 在npm中使用Webpack
+		
+		我们在package.json中设置一个快捷方式，运行webpack。
+
+		```package.json 文件
+		...
+		"scripts": {
+   		 "build": "webpack"
+  		}
+		... 
+		``` 
+		现在我们直接运行`npm run build`命令实现与上面相同的功能。
+		[参考](https://segmentfault.com/a/1190000007806707)
+
 
 * [webpack-guide](https://webpack.toobug.net/zh-cn/)
 
