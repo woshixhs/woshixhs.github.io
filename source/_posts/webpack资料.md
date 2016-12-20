@@ -15,6 +15,8 @@ date: 2016-12-12 17:01:14
 
 * [webpack 官方doc](http://webpack.github.io/docs/)
 
+* [webpack.js.org](https://webpack.js.org/)
+
 * [webpack-handbook](http://zhaoda.net/webpack-handbook/module-system.html)
 	 
 	 使用简单例子，介绍了webpack的使用
