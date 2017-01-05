@@ -1,9 +1,9 @@
 title: vue相关资料
-date: 2016-12-14 13:45:05
 categories: vue
 tags: vue
-
+date: 2016-12-14 13:45:05
 ---
+
 
 #vue相关资料
 
@@ -18,4 +18,8 @@ tags: vue
 *  [vue-resource](https://github.com/pagekit/vue-resource)
 
 	The HTTP client for Vue.js
+	
+*  [vuex](https://github.com/vuejs/vuex)
+	
+	vuex的官方网站[doc](https://vuex.vuejs.org/zh-cn/)
 
