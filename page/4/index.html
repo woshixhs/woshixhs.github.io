@@ -1,0 +1,1125 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Kim&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Kim">
+    
+
+    
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kim's blog">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="Kim's blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kim's blog">
+<meta name="twitter:description">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Kim&#39;s blog" title="Kim&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Kim&#39;s blog">Kim&#39;s blog</a></h1>
+				<h2 class="blog-motto">行动</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/20/Samurai源码分析/" title="Samurai源码分析" itemprop="url">Samurai源码分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-20T07:35:02.000Z" itemprop="datePublished"> 发表于 2015-04-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="模块划分">模块划分</h5><pre><code>-<span class="ruby">config
+</span>-<span class="ruby">event
+</span>-<span class="ruby">core
+</span>-<span class="ruby">model
+</span>-<span class="ruby">service
+</span>-<span class="ruby">transaction
+</span>-<span class="ruby">ui</span>
+</code></pre><h5 id="技术点">技术点</h5><pre><code>iOS <span class="class"><span class="keyword">class</span>启动顺序分析，<span class="title">NSObject</span> <span class="title">load</span> 和 <span class="title">initialize</span>方法。参考如下：</span>
+<span class="symbol">http:</span>/<span class="regexp">/www.cocoachina.com/ios</span><span class="regexp">/20150104/</span><span class="number">10826</span>.html
+<span class="symbol">http:</span>/<span class="regexp">/www.cnblogs.com/ider</span><span class="regexp">/archive/</span><span class="number">2012</span>/09/<span class="number">29</span>/objective_c_load_vs_initialize.html
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/20/Samurai源码分析/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/20/Samurai源码分析/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/19/ionic-问题汇总/" title="ionic 问题汇总" itemprop="url">ionic 问题汇总</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-19T12:50:35.000Z" itemprop="datePublished"> 发表于 2015-04-19</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="Error:_spawn_EACCES"><strong>Error: spawn EACCES</strong></h5><pre><code><span class="string">Error:</span> spawn EACCES
+at exports._errnoException (util.<span class="string">js:</span><span class="number">746</span>:<span class="number">11</span>)
+at ChildProcess.spawn (child_process.<span class="string">js:</span><span class="number">1162</span>:<span class="number">11</span>)
+at Object.exports.spawn (child_process.<span class="string">js:</span><span class="number">995</span>:<span class="number">9</span>)
+at Object.exports.spawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>superspawn.<span class="string">js:</span><span class="number">100</span>:<span class="number">31</span>)
+at runScriptViaChildProcessSpawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">188</span>:<span class="number">23</span>)
+at runScript (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">131</span>:<span class="number">16</span>)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">114</span>:<span class="number">20</span>
+at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
+at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
+at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
+解决方案: 先执行命令
+ionic hooks add
+</code></pre><p><a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
+<h5 id="Error:_EACCES,_permission_denied"><strong>Error: EACCES, permission denied</strong></h5><pre><code><span class="string">Error:</span> EACCES, permission denied <span class="string">'/home/kim/work/web_html5_app/sidemunuDemo/platforms/android/assets/www/cordova_plugins.js'</span>
+at Error (native)
+at Object.fs.openSync (fs.<span class="string">js:</span><span class="number">500</span>:<span class="number">18</span>)
+at Object.fs.writeFileSync (fs.<span class="string">js:</span><span class="number">1099</span>:<span class="number">15</span>)
+at Object.handlePrepare (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/plugman/</span>prepare.<span class="string">js:</span><span class="number">155</span>:<span class="number">8</span>)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">108</span>:<span class="number">21</span>
+at Array.map (native)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">73</span>:<span class="number">40</span>
+at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
+at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
+at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
+解决方案:执行以下命令
+sudo chmod -R a+rwx /appfolder
+</code></pre><p>   <a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ionic/">ionic</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/19/ionic-问题汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/19/ionic-问题汇总/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/19/ionic-调试工具/" title="ionic 调试工具" itemprop="url">ionic 调试工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-19T02:34:34.000Z" itemprop="datePublished"> 发表于 2015-04-19</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="debug"><strong>debug</strong></h5><ul>
+<li><a href="http://rensanning.iteye.com/blog/2018417" target="_blank" rel="external">Cordova 调试工具介绍</a></li>
+<li><a href="http://jetgeng.github.io/blog/html/2015/01/21/ionicdebug.html" target="_blank" rel="external">ionic项目通用调试介绍</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ionic/">ionic</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/debug/">debug</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/19/ionic-调试工具/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/19/ionic-调试工具/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/18/IDEA-Using-Ionic-Cordova/" title="IDEA Using Ionic Cordova " itemprop="url">IDEA Using Ionic Cordova </a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-18T15:10:29.000Z" itemprop="datePublished"> 发表于 2015-04-18</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="ionicFramework"><strong>ionicFramework</strong></h5><p><a href="http://ionicframework.com/" target="_blank" rel="external">ionicframe.com</a>是目前一个性能还可以的跨平台的移动端框架.下面是对android平台的分析<br><a href="http://blog.csdn.net/zoutongyuan/article/details/41910903" target="_blank" rel="external">http://blog.csdn.net/zoutongyuan/article/details/41910903</a></p>
+<h5 id="idea插件集成ionic"><strong>idea插件集成ionic</strong></h5><p>参考资料:<br><a href="https://www.jetbrains.com/idea/help/using-phonegap-cordova.html" target="_blank" rel="external">https://www.jetbrains.com/idea/help/using-phonegap-cordova.html</a><br><a href="https://confluence.jetbrains.com/display/IntelliJIDEA/PhoneGap%2C+Cordova+and+Ionic" target="_blank" rel="external">https://confluence.jetbrains.com/display/IntelliJIDEA/PhoneGap%2C+Cordova+and+Ionic</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ionic/">ionic</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Web/">Web</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/18/IDEA-Using-Ionic-Cordova/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/18/IDEA-Using-Ionic-Cordova/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/17/linux-android-device-调试/" title="linux android device 调试" itemprop="url">linux android device 调试</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-17T14:36:32.000Z" itemprop="datePublished"> 发表于 2015-04-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="Android_Device调试"><strong>Android Device调试</strong></h5><ul>
+<li>windows<br>  需要安装驱动</li>
+<li>Mac<br> 不需要安装任何驱动</li>
+<li>linux<br>以 root 权限在 /etc/udev/rules.d/ 的目录下创建 .rules 配置文件<br>sudo touch 51-android.rules<br>SUBSYSTEM==”usb”, ATTR{idVendor}==”0bb4”, MODE=”0666”,   GROUP=”plugdev”<br>之后执行命令chmod a+r /etc/udev/rules.d/51-android.rules<br>执行完成之后,重新启动就可以了<br>命令<br>sudo /etc/init.d/udev restart<br>adb kill-server<br>adb devices</li>
+</ul>
+<h5 id="idVendor"><strong>idVendor</strong></h5><p>在安卓开发文档中有个列表,有个Vendor list.对于单台设备,也可以使用命令lsusb查看, 通过插上手机,跟没有插上手机,可以看到手机的idVendor</p>
+<h5 id="参考文档"><strong>参考文档</strong></h5><p><a href="http://my.oschina.net/u/260921/blog/469626" target="_blank" rel="external">http://my.oschina.net/u/260921/blog/469626</a><br><a href="http://www.oschina.net/question/4873_27142" target="_blank" rel="external">http://www.oschina.net/question/4873_27142</a><br><a href="http://wujianjun.iteye.com/blog/1748423" target="_blank" rel="external">http://wujianjun.iteye.com/blog/1748423</a><br><a href="https://developer.android.com/tools/device.html" target="_blank" rel="external">https://developer.android.com/tools/device.html</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android-USB/">Android USB</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/17/linux-android-device-调试/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/17/linux-android-device-调试/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/16/npm-使用/" title="npm 使用" itemprop="url">npm 使用</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-16T15:07:34.000Z" itemprop="datePublished"> 发表于 2015-04-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="npm_常用命令d"><strong>npm 常用命令</strong>d</h5><figure class="highlight plain"><figcaption><span>code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;package name&gt; -g</span><br><span class="line">npm uninstall &lt;package name&gt;</span><br><span class="line">npm search &lt;package name&gt;</span><br><span class="line">npm ls -g</span><br><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+<p><a href="http://dreamerslab.com/blog/tw/npm-basic-commands/" target="_blank" rel="external">参考</a></p>
+<h5 id="npm_更新"><strong>npm 更新</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm -g update</span><br><span class="line">如果更新的版本有问题,可以使用预览版本</span><br><span class="line">npm i -g npm@next 预览版本,</span><br></pre></td></tr></table></figure>
+<p><a href="http://segmentfault.com/q/1010000002437961" target="_blank" rel="external">参考</a></p>
+<h5 id="npm_添加镜像"><strong>npm 添加镜像</strong></h5><p>使用npm下载比较慢,可以使用如下的命令添加镜像</p>
+<ul>
+<li><p>通过config命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org </span><br><span class="line">npm info underscore （如果上面配置正确这个命令会有字符串response）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行指定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --registry https://registry.npm.taobao.org info underscore</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 ~/.npmrc 加入下面内容</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p><a href="https://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank" rel="external">参考</a></p>
+</li>
+</ul>
+<h5 id="node_runtime_更新"><strong>node runtime 更新</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n</span><br><span class="line">n stable</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.jb51.net/article/52409.htm" target="_blank" rel="external">参考</a></p>
+<h3 id="参考文档">参考文档</h3><ul>
+<li><p><a href="https://segmentfault.com/a/1190000004894400" target="_blank" rel="external">NPM使用手册</a></p>
+</li>
+<li><p><a href="http://www.jianshu.com/p/e958a74a0fd7" target="_blank" rel="external">NPM简明使用教程</a></p>
+</li>
+<li><p><a href="http://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="external">NPM使用介绍</a></p>
+</li>
+<li><p><a href="https://docs.npmjs.com/" target="_blank" rel="external">NPM官方文档</a></p>
+</li>
+<li><p><a href="https://npm.taobao.org/" target="_blank" rel="external">淘宝NPM镜像</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="external">npm 模块安装机制简介</a></p>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/npm/">npm</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/16/npm-使用/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/16/npm-使用/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/10/iOS-UI-Signal分析/" title="iOS UI Signal分析" itemprop="url">iOS UI Signal分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-10T10:01:26.000Z" itemprop="datePublished"> 发表于 2015-04-10</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="UI_Signal"><strong>UI Signal</strong></h5><pre><code>事件响应，传递，是整个UI系统的关键。这里使用了Bee UI <span class="keyword">Signal</span>, 重新定义了UI的事件传递，也了解下UI中的重要的响应链。
+</code></pre><ul>
+<li><p>view的物理布局</p>
+<pre><code><span class="built_in">UIViewController</span>中，里面有一个View1，之后View1里面有个View2，
+</code></pre></li>
+<li><p>事件的传递<br>   View2可以接受点击事件，View1也可以接受点击事件。当点击View2的时候，整个消息链路是怎么样的？<br>   整个消息链路是透传的，就是转发接受到的消息，那整个消息链路是View2-&gt;View1&gt;UIViewController,<br>   消息是这样传递的，处理结果刚好相反，递归调用。这里，你也可以不传递消息，例如链路可以是View2，或是View2-&gt;View1</p>
+</li>
+<li><p>场景使用<br> 等具体应用的时候，每个View的容器，就可以添加自己感兴趣的事件，进行响应，其他就不用关心了。</p>
+</li>
+</ul>
+<h5 id="Demo"><strong>Demo</strong></h5><p> <a href="https://github.com/gelosie/ios-ui-signal" target="_blank" rel="external">ios-ui-signal</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UI-Signal/">UI Signal</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/10/iOS-UI-Signal分析/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/10/iOS-UI-Signal分析/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/02/iOS-Develper资源地址/" title="iOS Develper资源地址" itemprop="url">iOS Develper资源地址</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-02T01:46:33.000Z" itemprop="datePublished"> 发表于 2015-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="xCode_下载地址">xCode 下载地址</h5><p><a href="https://developer.apple.com/downloads/index.action#" target="_blank" rel="external">https://developer.apple.com/downloads/index.action#</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/02/iOS-Develper资源地址/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/02/iOS-Develper资源地址/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/02/iOS-App安装工具/" title="iOS App安装工具" itemprop="url">iOS App安装工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-02T01:45:57.000Z" itemprop="datePublished"> 发表于 2015-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="app_tools"><strong>app tools</strong></h5><p><a href="http://www.itools.cn/" target="_blank" rel="external">iTools</a> 最新的版本,只有收费版本可以看到sanbox中的内容<br><a href="http://www.i-funbox.com/ifunboxmac/" target="_blank" rel="external">iFunBox</a> </p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/02/iOS-App安装工具/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/02/iOS-App安装工具/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/02/LKDBHelp源码分析/" title="LKDBHelp源码分析" itemprop="url">LKDBHelp源码分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-02T01:41:57.000Z" itemprop="datePublished"> 发表于 2015-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/源码分析/">源码分析</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/02/LKDBHelp源码分析/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/02/LKDBHelp源码分析/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/C/" title="C">C<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Mac-command-line/" title="Mac command line">Mac command line<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Terminal/" title="Terminal">Terminal<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ionic/" title="ionic">ionic<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/npm/" title="npm">npm<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/nvm/" title="nvm">nvm<sup>1</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/vue/" title="vue">vue<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/web前端/" title="web前端">web前端<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/技术书籍/" title="技术书籍">技术书籍<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/搭建博客/" title="搭建博客">搭建博客<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络工具/" title="网络工具">网络工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/源码分析/" title="源码分析">源码分析<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/goagent/" title="goagent">goagent<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UI-Signal/" title="UI Signal">UI Signal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS推送/" title="iOS推送">iOS推送<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Display/" title="Display">Display<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Kim Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/woshixhs" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="http://yoursite.com/about" target="_blank" title="Kim">Kim</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"woshixhs"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9248c391a20a2221c43dee9af4505b69' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+ </html>

@@ -1,0 +1,699 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>git 常用命令 | Kim&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Kim">
+    
+
+    
+    <meta name="description" content="创建gitgit init
+添加远程仓库git remote add [shortname] [url]
+git remote add origin git@server-name:path/repo-name.git  
+添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+通过这个方法,可以对同一个仓库,添加多个远程仓库
+删除远程仓库$ git remote rm 
+$ git re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 常用命令">
+<meta property="og:url" content="http://yoursite.com/2015/03/31/git-常用命令/index.html">
+<meta property="og:site_name" content="Kim's blog">
+<meta property="og:description" content="创建gitgit init
+添加远程仓库git remote add [shortname] [url]
+git remote add origin git@server-name:path/repo-name.git  
+添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+通过这个方法,可以对同一个仓库,添加多个远程仓库
+删除远程仓库$ git remote rm 
+$ git re">
+<meta property="og:updated_time" content="2017-03-10T04:29:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git 常用命令">
+<meta name="twitter:description" content="创建gitgit init
+添加远程仓库git remote add [shortname] [url]
+git remote add origin git@server-name:path/repo-name.git  
+添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+通过这个方法,可以对同一个仓库,添加多个远程仓库
+删除远程仓库$ git remote rm 
+$ git re">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Kim&#39;s blog" title="Kim&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Kim&#39;s blog">Kim&#39;s blog</a></h1>
+				<h2 class="blog-motto">行动</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/31/git-常用命令/" title="git 常用命令" itemprop="url">git 常用命令</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-31T13:12:57.000Z" itemprop="datePublished"> 发表于 2015-03-31</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建git"><span class="toc-number">1.</span> <span class="toc-text">创建git</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加远程仓库"><span class="toc-number">2.</span> <span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除远程仓库"><span class="toc-number">3.</span> <span class="toc-text">删除远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看远程仓库"><span class="toc-number">4.</span> <span class="toc-text">查看远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加本地文件到stash"><span class="toc-number">5.</span> <span class="toc-text">添加本地文件到stash</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#本地提交到仓库"><span class="toc-number">6.</span> <span class="toc-text">本地提交到仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送分支到远程"><span class="toc-number">7.</span> <span class="toc-text">推送分支到远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取远程分支"><span class="toc-number">8.</span> <span class="toc-text">获取远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#切换远程"><span class="toc-number">9.</span> <span class="toc-text">切换远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#合并远程"><span class="toc-number">10.</span> <span class="toc-text">合并远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除远程分支"><span class="toc-number">11.</span> <span class="toc-text">删除远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除本地分支"><span class="toc-number">12.</span> <span class="toc-text">删除本地分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看分支命令"><span class="toc-number">13.</span> <span class="toc-text">查看分支命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#撤销修改"><span class="toc-number">14.</span> <span class="toc-text">撤销修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#回撤版本"><span class="toc-number">15.</span> <span class="toc-text">回撤版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建标签"><span class="toc-number">16.</span> <span class="toc-text">创建标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有标签"><span class="toc-number">17.</span> <span class="toc-text">查看所有标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看标签信息"><span class="toc-number">18.</span> <span class="toc-text">查看标签信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除标签"><span class="toc-number">19.</span> <span class="toc-text">删除标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送标签"><span class="toc-number">20.</span> <span class="toc-text">推送标签</span></a></li></ol>
+		
+		</div>
+		
+		<h5 id="创建git"><strong>创建git</strong></h5><pre><code><span class="title">git</span> init
+</code></pre><h5 id="添加远程仓库"><strong>添加远程仓库</strong></h5><pre><code><span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="attr_selector">[shortname]</span> <span class="attr_selector">[url]</span>
+<span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="tag">origin</span> <span class="tag">git</span><span class="at_rule">@<span class="keyword">server-name:path/repo-name.git</span>  
+添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+通过这个方法,可以对同一个仓库,添加多个远程仓库</span>
+</code></pre><h5 id="删除远程仓库"><strong>删除远程仓库</strong></h5><pre><code><span class="variable">$ </span>git remote rm 
+<span class="variable">$ </span>git remote rm  coding
+</code></pre><h5 id="查看远程仓库"><strong>查看远程仓库</strong></h5><pre><code>git remote
+git <span class="keyword">remove</span> -v
+</code></pre><h5 id="添加本地文件到stash"><strong>添加本地文件到stash</strong></h5><pre><code>git <span class="built_in">add</span> <span class="built_in">file</span>
+</code></pre><h5 id="本地提交到仓库"><strong>本地提交到仓库</strong></h5><pre><code><span class="title">git</span> commit
+</code></pre><h5 id="推送分支到远程"><strong>推送分支到远程</strong></h5><pre><code>git push <span class="tag">&lt;<span class="title">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="title">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="title">远程分支名</span>&gt;</span>
+git push, 
+后续参数都省略,或是已经本地跟远程已经建立关联
+git push origin master,
+一般默认推送到master分支, 本地分支跟远程分支同名
+</code></pre><h5 id="获取远程分支"><strong>获取远程分支</strong></h5><pre><code>git clone,  获取远程分支的代码
+git pull, 获取当前分支的最新代码
+git pull = git fetch + <span class="operator"><span class="keyword">merge</span> <span class="keyword">to</span> <span class="keyword">local</span>
+git <span class="keyword">fetch</span> origin
+git <span class="keyword">merge</span> origin/<span class="keyword">next</span>
+git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; </span>
+</code></pre><h5 id="切换远程"><strong>切换远程</strong></h5><pre><code>git checkout , 切换分支
+git checkout -b <span class="built_in">dev</span> origin/<span class="built_in">dev</span>, 
+#创建远程origin的<span class="built_in">dev</span>分支到本地，并命名为<span class="built_in">dev</span>
+git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name，
+可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。
+</code></pre><h5 id="合并远程"><strong>合并远程</strong></h5><pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
+</code></pre><p>用于合并指定分支到当前分支,<br>是Fast-forward合并分支，这种模式下，删除分支后，会丢掉分支信息。</p>
+<pre><code>git <span class="keyword">merge</span> --<span class="keyword">no</span>-ff -<span class="keyword">m</span> <span class="string">"..."</span> &lt;branch&gt;
+</code></pre><p>—no-ff参数，表示禁用Fast forward<br>本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去</p>
+<h5 id="删除远程分支"><strong>删除远程分支</strong></h5><pre><code>git <span class="keyword">push</span> &lt;远程主机名&gt; --<span class="keyword">delete</span> &lt;远程分知名&gt; 
+git <span class="keyword">push</span> origin --<span class="keyword">delete</span> bugfix
+</code></pre><h5 id="删除本地分支"><strong>删除本地分支</strong></h5><pre><code>git branch <span class="operator">-d</span> xxx, 
+</code></pre><h5 id="查看分支命令"><strong>查看分支命令</strong></h5><pre><code>git branch  本地
+git branch -r 远程
+git branch -<span class="tag">a</span> 所有
+</code></pre><h5 id="撤销修改"><strong>撤销修改</strong></h5><p>修改了内容,不过没有通过git add file，添加到stash</p>
+<p>单个文件</p>
+<pre><code>git checkout -- <span class="keyword">file</span>
+<span class="keyword">discard</span> <span class="keyword">file</span>, <span class="keyword">file</span>修改内容被放弃
+</code></pre><p>所有文件</p>
+<pre><code>git checkout <span class="comment">-- .</span>
+当前目录的所有问题放弃
+</code></pre><p>如果这个时候，已经通过git add 添加到stash，还没有push</p>
+<pre><code>git reset HEAD &lt;file&gt;<span class="keyword">...</span>
+把暂存区的修改撤销掉（unstage），重新放回工作区：
+</code></pre><p>添加到文件，还没有被tracked</p>
+<pre><code><span class="title">git</span> clean -fdx
+把没有tracked的文件放弃
+</code></pre><h5 id="回撤版本"><strong>回撤版本</strong></h5><h5 id="创建标签"><strong>创建标签</strong></h5><pre><code>git tag &lt;<span class="property">name</span>&gt;
+</code></pre><p>默认标签是打在最新提交的commit上的，可以打在一个commit id上面，</p>
+<pre><code>git tag &lt;<span class="property">name</span>&gt; commit <span class="property">id</span>
+</code></pre><p>这样就算当时没打标签，也可以补打标签</p>
+<p>创建带说明的标签</p>
+<pre><code>git tag -<span class="tag">a</span> &lt;tagname&gt; -m <span class="string">"..."</span>
+-<span class="tag">a</span> 标签名字
+</code></pre><p>   －m 说明性文字</p>
+<h5 id="查看所有标签"><strong>查看所有标签</strong></h5><pre><code>git <span class="built_in">tag</span>
+</code></pre><h5 id="查看标签信息"><strong>查看标签信息</strong></h5><pre><code>git show <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><h5 id="删除标签"><strong>删除标签</strong></h5><pre><code>git tag  －d <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><p>删除本地标签</p>
+<p>如果要删除远程标签,必须先删除本地标签，之后删除远程标签</p>
+<pre><code>git push origin <span class="symbol">:refs/tags/&lt;tagname&gt;</span>
+</code></pre><h5 id="推送标签"><strong>推送标签</strong></h5><pre><code>git push origin <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><p>推送单个标签</p>
+<pre><code>git push origin <span class="comment">--tags</span>
+</code></pre><p>一次性推送全部尚未推送到远程的本地标签</p>
+<ul>
+<li>还没add到stash</li>
+<li>已经commit到stash</li>
+<li>已经push</li>
+</ul>
+<hr>
+<p>参考:</p>
+<ul>
+<li><a href="http://wuchong.me/blog/2015/03/30/git-useful-skills/#more" target="_blank" rel="external">http://wuchong.me/blog/2015/03/30/git-useful-skills/#more</a></li>
+<li><a href="http://robbinfan.com/blog/34/git-common-command" target="_blank" rel="external">http://robbinfan.com/blog/34/git-common-command</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="https://gitcafe.com/GitCafe/Help/wiki/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8" target="_blank" rel="external">Git 常用命令速查表</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/03/31/git-常用命令/" data-title="git 常用命令 | Kim&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/04/02/LKDBHelp源码分析/" title="LKDBHelp源码分析">
+  <strong>上一篇：</strong><br/>
+  <span>
+  LKDBHelp源码分析</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/03/27/Java-公共技术汇总/"  title="Java 公共技术汇总">
+ <strong>下一篇：</strong><br/> 
+ <span>Java 公共技术汇总
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/03/31/git-常用命令/" data-title="git 常用命令" data-url="http://yoursite.com/2015/03/31/git-常用命令/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建git"><span class="toc-number">1.</span> <span class="toc-text">创建git</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加远程仓库"><span class="toc-number">2.</span> <span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除远程仓库"><span class="toc-number">3.</span> <span class="toc-text">删除远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看远程仓库"><span class="toc-number">4.</span> <span class="toc-text">查看远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加本地文件到stash"><span class="toc-number">5.</span> <span class="toc-text">添加本地文件到stash</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#本地提交到仓库"><span class="toc-number">6.</span> <span class="toc-text">本地提交到仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送分支到远程"><span class="toc-number">7.</span> <span class="toc-text">推送分支到远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取远程分支"><span class="toc-number">8.</span> <span class="toc-text">获取远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#切换远程"><span class="toc-number">9.</span> <span class="toc-text">切换远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#合并远程"><span class="toc-number">10.</span> <span class="toc-text">合并远程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除远程分支"><span class="toc-number">11.</span> <span class="toc-text">删除远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除本地分支"><span class="toc-number">12.</span> <span class="toc-text">删除本地分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看分支命令"><span class="toc-number">13.</span> <span class="toc-text">查看分支命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#撤销修改"><span class="toc-number">14.</span> <span class="toc-text">撤销修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#回撤版本"><span class="toc-number">15.</span> <span class="toc-text">回撤版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建标签"><span class="toc-number">16.</span> <span class="toc-text">创建标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有标签"><span class="toc-number">17.</span> <span class="toc-text">查看所有标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看标签信息"><span class="toc-number">18.</span> <span class="toc-text">查看标签信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除标签"><span class="toc-number">19.</span> <span class="toc-text">删除标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送标签"><span class="toc-number">20.</span> <span class="toc-text">推送标签</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/C/" title="C">C<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Mac-command-line/" title="Mac command line">Mac command line<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Terminal/" title="Terminal">Terminal<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ionic/" title="ionic">ionic<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/npm/" title="npm">npm<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/nvm/" title="nvm">nvm<sup>1</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/vue/" title="vue">vue<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/web前端/" title="web前端">web前端<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/技术书籍/" title="技术书籍">技术书籍<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/搭建博客/" title="搭建博客">搭建博客<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络工具/" title="网络工具">网络工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/源码分析/" title="源码分析">源码分析<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/goagent/" title="goagent">goagent<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UI-Signal/" title="UI Signal">UI Signal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS推送/" title="iOS推送">iOS推送<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Display/" title="Display">Display<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Kim Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/woshixhs" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="http://yoursite.com/about" target="_blank" title="Kim">Kim</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"woshixhs"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9248c391a20a2221c43dee9af4505b69' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+</html>

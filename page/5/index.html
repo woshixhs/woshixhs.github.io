@@ -1,0 +1,1239 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Kim&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Kim">
+    
+
+    
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kim's blog">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Kim's blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kim's blog">
+<meta name="twitter:description">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Kim&#39;s blog" title="Kim&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Kim&#39;s blog">Kim&#39;s blog</a></h1>
+				<h2 class="blog-motto">行动</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/31/git-常用命令/" title="git 常用命令" itemprop="url">git 常用命令</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-31T13:12:57.000Z" itemprop="datePublished"> 发表于 2015-03-31</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="创建git"><strong>创建git</strong></h5><pre><code><span class="title">git</span> init
+</code></pre><h5 id="添加远程仓库"><strong>添加远程仓库</strong></h5><pre><code><span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="attr_selector">[shortname]</span> <span class="attr_selector">[url]</span>
+<span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="tag">origin</span> <span class="tag">git</span><span class="at_rule">@<span class="keyword">server-name:path/repo-name.git</span>  
+添加一个远程库, 这样就把本地跟远程的git url地址绑定了
+通过这个方法,可以对同一个仓库,添加多个远程仓库</span>
+</code></pre><h5 id="删除远程仓库"><strong>删除远程仓库</strong></h5><pre><code><span class="variable">$ </span>git remote rm 
+<span class="variable">$ </span>git remote rm  coding
+</code></pre><h5 id="查看远程仓库"><strong>查看远程仓库</strong></h5><pre><code>git remote
+git <span class="keyword">remove</span> -v
+</code></pre><h5 id="添加本地文件到stash"><strong>添加本地文件到stash</strong></h5><pre><code>git <span class="built_in">add</span> <span class="built_in">file</span>
+</code></pre><h5 id="本地提交到仓库"><strong>本地提交到仓库</strong></h5><pre><code><span class="title">git</span> commit
+</code></pre><h5 id="推送分支到远程"><strong>推送分支到远程</strong></h5><pre><code>git push <span class="tag">&lt;<span class="title">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="title">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="title">远程分支名</span>&gt;</span>
+git push, 
+后续参数都省略,或是已经本地跟远程已经建立关联
+git push origin master,
+一般默认推送到master分支, 本地分支跟远程分支同名
+</code></pre><h5 id="获取远程分支"><strong>获取远程分支</strong></h5><pre><code>git clone,  获取远程分支的代码
+git pull, 获取当前分支的最新代码
+git pull = git fetch + <span class="operator"><span class="keyword">merge</span> <span class="keyword">to</span> <span class="keyword">local</span>
+git <span class="keyword">fetch</span> origin
+git <span class="keyword">merge</span> origin/<span class="keyword">next</span>
+git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; </span>
+</code></pre><h5 id="切换远程"><strong>切换远程</strong></h5><pre><code>git checkout , 切换分支
+git checkout -b <span class="built_in">dev</span> origin/<span class="built_in">dev</span>, 
+#创建远程origin的<span class="built_in">dev</span>分支到本地，并命名为<span class="built_in">dev</span>
+git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name，
+可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。
+</code></pre><h5 id="合并远程"><strong>合并远程</strong></h5><pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
+</code></pre><p>用于合并指定分支到当前分支,<br>是Fast-forward合并分支，这种模式下，删除分支后，会丢掉分支信息。</p>
+<pre><code>git <span class="keyword">merge</span> --<span class="keyword">no</span>-ff -<span class="keyword">m</span> <span class="string">"..."</span> &lt;branch&gt;
+</code></pre><p>—no-ff参数，表示禁用Fast forward<br>本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去</p>
+<h5 id="删除远程分支"><strong>删除远程分支</strong></h5><pre><code>git <span class="keyword">push</span> &lt;远程主机名&gt; --<span class="keyword">delete</span> &lt;远程分知名&gt; 
+git <span class="keyword">push</span> origin --<span class="keyword">delete</span> bugfix
+</code></pre><h5 id="删除本地分支"><strong>删除本地分支</strong></h5><pre><code>git branch <span class="operator">-d</span> xxx, 
+</code></pre><h5 id="查看分支命令"><strong>查看分支命令</strong></h5><pre><code>git branch  本地
+git branch -r 远程
+git branch -<span class="tag">a</span> 所有
+</code></pre><h5 id="撤销修改"><strong>撤销修改</strong></h5><p>修改了内容,不过没有通过git add file，添加到stash</p>
+<p>单个文件</p>
+<pre><code>git checkout -- <span class="keyword">file</span>
+<span class="keyword">discard</span> <span class="keyword">file</span>, <span class="keyword">file</span>修改内容被放弃
+</code></pre><p>所有文件</p>
+<pre><code>git checkout <span class="comment">-- .</span>
+当前目录的所有问题放弃
+</code></pre><p>如果这个时候，已经通过git add 添加到stash，还没有push</p>
+<pre><code>git reset HEAD &lt;file&gt;<span class="keyword">...</span>
+把暂存区的修改撤销掉（unstage），重新放回工作区：
+</code></pre><p>添加到文件，还没有被tracked</p>
+<pre><code><span class="title">git</span> clean -fdx
+把没有tracked的文件放弃
+</code></pre><h5 id="回撤版本"><strong>回撤版本</strong></h5><h5 id="创建标签"><strong>创建标签</strong></h5><pre><code>git tag &lt;<span class="property">name</span>&gt;
+</code></pre><p>默认标签是打在最新提交的commit上的，可以打在一个commit id上面，</p>
+<pre><code>git tag &lt;<span class="property">name</span>&gt; commit <span class="property">id</span>
+</code></pre><p>这样就算当时没打标签，也可以补打标签</p>
+<p>创建带说明的标签</p>
+<pre><code>git tag -<span class="tag">a</span> &lt;tagname&gt; -m <span class="string">"..."</span>
+-<span class="tag">a</span> 标签名字
+</code></pre><p>   －m 说明性文字</p>
+<h5 id="查看所有标签"><strong>查看所有标签</strong></h5><pre><code>git <span class="built_in">tag</span>
+</code></pre><h5 id="查看标签信息"><strong>查看标签信息</strong></h5><pre><code>git show <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><h5 id="删除标签"><strong>删除标签</strong></h5><pre><code>git tag  －d <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><p>删除本地标签</p>
+<p>如果要删除远程标签,必须先删除本地标签，之后删除远程标签</p>
+<pre><code>git push origin <span class="symbol">:refs/tags/&lt;tagname&gt;</span>
+</code></pre><h5 id="推送标签"><strong>推送标签</strong></h5><pre><code>git push origin <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+</code></pre><p>推送单个标签</p>
+<pre><code>git push origin <span class="comment">--tags</span>
+</code></pre><p>一次性推送全部尚未推送到远程的本地标签</p>
+<ul>
+<li>还没add到stash</li>
+<li>已经commit到stash</li>
+<li>已经push</li>
+</ul>
+<hr>
+<p>参考:</p>
+<ul>
+<li><a href="http://wuchong.me/blog/2015/03/30/git-useful-skills/#more" target="_blank" rel="external">http://wuchong.me/blog/2015/03/30/git-useful-skills/#more</a></li>
+<li><a href="http://robbinfan.com/blog/34/git-common-command" target="_blank" rel="external">http://robbinfan.com/blog/34/git-common-command</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="https://gitcafe.com/GitCafe/Help/wiki/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8" target="_blank" rel="external">Git 常用命令速查表</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/31/git-常用命令/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/31/git-常用命令/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/27/Java-公共技术汇总/" title="Java 公共技术汇总" itemprop="url">Java 公共技术汇总</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-27T14:02:19.000Z" itemprop="datePublished"> 发表于 2015-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="Java_Annotation注解"><strong>Java Annotation注解</strong></h5><p>注解应用比较广泛, 有几种类型,<a href="http://codekk.com/open-source-project-analysis/detail/Android/Trinea/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8BJava%20%E6%B3%A8%E8%A7%A3%20Annotation" target="_blank" rel="external">参考文章</a></p>
+<h5 id="Java动态代理技术"><strong>Java动态代理技术</strong></h5><p><a href="http://codekk.com/open-source-project-analysis/detail/Android/Caij/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8BJava%20%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86" target="_blank" rel="external">参考文章</a></p>
+<h5 id="Java_依赖注入">Java 依赖注入</h5><p><a href="http://codekk.com/open-source-project-analysis/detail/Android/%E6%89%94%E7%89%A9%E7%BA%BF/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8B%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5" target="_blank" rel="external">参考文章</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/基础技术/">基础技术</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/27/Java-公共技术汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/27/Java-公共技术汇总/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/27/Android-ORM比较/" title="Android ORM比较" itemprop="url">Android ORM比较</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-27T13:04:41.000Z" itemprop="datePublished"> 发表于 2015-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="androrm"><strong>androrm</strong></h5><p><a href="https://github.com/androrm/androrm" target="_blank" rel="external">androrm</a>, 比较简单library,很久没有维护,适合学习,简单测试.</p>
+<h5 id="android-core"><strong>android-core</strong></h5><p><a href="https://github.com/Siminov/android-core" target="_blank" rel="external">android-core</a>,相对成熟,没有测评.</p>
+<h5 id="ormdroid"><strong>ormdroid</strong></h5><p><a href="https://github.com/roscopeco/ormdroid" target="_blank" rel="external">ormdroid</a>,只出了一个版本,适合学习之用.</p>
+<h6 id="greenDao"><strong>greenDao</strong></h6><p><a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="external">greenDao</a>,android上面比较成熟的框架,而且性能很好,推荐使用</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ORM/">ORM</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/27/Android-ORM比较/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/27/Android-ORM比较/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/27/goagent配置/" title="goagent配置" itemprop="url">goagent配置</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-27T12:35:10.000Z" itemprop="datePublished"> 发表于 2015-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="goagent配置"><strong>goagent配置</strong></h5><p>配置<a href="https://github.com/goagent/goagent" target="_blank" rel="external">goagent</a>比较简单,直接参考文档就行了.</p>
+<p><a href="https://github.com/goagent/goagent/blob/wiki/SimpleGuide.md" target="_blank" rel="external">Simple Guide</a><br><a href="https://github.com/goagent/goagent/blob/wiki/InstallGuide.md" target="_blank" rel="external">Graphic Guide</a></p>
+<h5 id="FAQ"><strong>FAQ</strong></h5><ul>
+<li>上传过程中,遇到google帐号密码错误,估计是使用16位应用专用密码的原因.这个时候,可以参考Graphic Guide中的地址,生成一个应用密码,如果你没有启用二次验证,先启用二次验证,之后,任何选择一个生成一个密码就可以.</li>
+<li><p>登录google,会出现不安全的链接.解决方案</p>
+<pre><code>FireFox<span class="subst">-&gt;</span>选项<span class="subst">-&gt;</span>高级<span class="subst">-&gt;</span>加密<span class="subst">-&gt;</span>查看证书<span class="subst">-&gt;</span>证书机构<span class="subst">-&gt;</span>导入证书, 选择   <span class="built_in">local</span><span class="subst">\</span>ca<span class="built_in">.</span>crt, 勾选所有项，导入
+Chrome<span class="subst">-&gt;</span>设置<span class="subst">-&gt;</span>管理证书<span class="subst">-&gt;</span>授权中心<span class="subst">-&gt;</span>导入
+</code></pre></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/网络工具/">网络工具</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/goagent/">goagent</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/27/goagent配置/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/27/goagent配置/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/24/Markdown使用/" title="Markdown使用" itemprop="url">Markdown使用</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-24T14:33:52.000Z" itemprop="datePublished"> 发表于 2015-03-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="Markdown语法"><strong>Markdown语法</strong></h5><p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">Markdown Cheatsheet</a></p>
+<p><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a></p>
+<p><a href="http://www.markdown.cn/" target="_blank" rel="external">MarkDown 语法说明</a></p>
+<h5 id="Markdown在线工具"><strong>Markdown在线工具</strong></h5><p><a href="https://stackedit.io/editor" target="_blank" rel="external">https://stackedit.io/editor</a></p>
+<p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">https://www.zybuluo.com/mdeditor</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/24/Markdown使用/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/24/Markdown使用/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/24/git-sshkey配置/" title="git ssh key配置" itemprop="url">git ssh key配置</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-24T13:26:04.000Z" itemprop="datePublished"> 发表于 2015-03-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="git的配置">git的配置</h5><ol>
+<li><strong>安装git</strong></li>
+<li><strong>生成本地SSH密匙(这是关键的一步)</strong><br> 如果用户是第一次使用git，就需要现在家目录创建一个.ssh文件夹，生成密匙用的默认文件夹，由于是隐藏的，用户可以在家目录按Ctrl+h来显示隐藏文件夹，看看是否已经有这个.ssh文件夹，如果没有，就打开终端输入如下命令：</li>
+</ol>
+<blockquote>
+<pre><code><span class="built_in">mkdir</span> ~/.ssh
+</code></pre></blockquote>
+<p>PS:要是没有创建之前已经有的.ssh目录的话，切换到.ssh，用ls命令查看目录下是否有id_rsa.pub与id_rsa两个文件，有的话就代表密匙已经生成过，就不需要再执行生产密匙的步骤。<br>创建好目录之后，就开始输入如下命令生成密匙。</p>
+<blockquote>
+<p>ssh-keygen -t rsa -C “your_email@example.com”</p>
+</blockquote>
+<pre><code>注意，为了保证是默认设置，当提示让输入保存密匙的文件的时候，直接按回车键就可以了。
+之后会让输入密码，和确认密码，可以输要保证两次一样，也可以都按回车键不输密码。执行结束之后终端会输出如下信息。
+</code></pre><blockquote>
+<p>Your identification has been saved in /home/you/.ssh/id_rsa. Your<br>public key has been saved in /home/you/.ssh/id_rsa.pub. The key<br>fingerprint is:  01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db<br>your_email@example.com</p>
+</blockquote>
+<ol>
+<li><strong>添加密匙到github上</strong><br> 上一步会在/~/home/.ssh/文件夹中生成id_rsa.pub与id_rsa两个文件.其中id_rsa是私钥,保存存在本地,id_rsa.pub是公钥.然后将公钥中的内容粘贴到你github帐号中的SSH Public Keys的位置。注意小心不要复制到空格。<br>不过还有另一种方法将key复制到粘贴板：</li>
+</ol>
+<blockquote>
+<p>sudo apt-get install xclip<br>xclip -sel clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<p>执行这两个命令之后，就复制id_rsa.pub的内容到粘贴版了。<br>        打开github网站，点击右上角Account settings图标，然后在左边栏选择SSH Keys，接着点击右边的Add SSH Key，title可以随便填，key里面直接右键粘贴就可以了。然后点击添加，如果提示添加失败，可能就是复制的时候有问题，所以推荐使用上面的命令来复制，而不是打开本地key文件去复制。</p>
+<ol>
+<li><strong>测试是否成功</strong></li>
+</ol>
+<blockquote>
+<pre><code><span class="title">ssh</span> -T git<span class="variable">@github</span>.com
+</code></pre></blockquote>
+<p> 为了确保一切OK，我们测试是否添加key成功，其间如果用户在第一步设置了密码，会提示输入密码。请确保不要更改git@github.com。输入上面的命令之后，你会看到一个警告，不用管，输入yes就行。过一会就会出现如下信息。</p>
+<blockquote>
+<p>Hi yourname You’ve successfully authenticated, but GitHub does not<br>provide shell access.</p>
+</blockquote>
+<p> 如果yourname显示的正确，就代表你已经成功安装了SHH Key了。<br> 5 <strong>初始化git配置</strong></p>
+<blockquote>
+<pre><code>git config --global user<span class="class">.name</span> <span class="string">"username"</span>
+git config --global user<span class="class">.email</span> username@xxx.com
+</code></pre></blockquote>
+<p> 6 <strong>补充：避免每次提交都输入用户名和密码</strong><br>        如果不想每次都输入用户名和密码的话，可以使用ssh方式，ssh方式是通过密匙认证的不需要输入密码，https方式每次都需要输入用户名和密码，如果想改为ssh方式，只需要找到项目目录下的.git文件夹，然后进入到该文件夹里面找到config文件，编辑该文件将其中的URL改为ssh提交的方式改过之后是这样的:</p>
+<blockquote>
+<p> [remote “origin”]<br> url = git@github.com:username/work.git<br>fetch = +refs/heads/<em>:refs/remotes/origin/</em></p>
+</blockquote>
+<p>7 参考文章<br><a href="http://www.picksomething.cn/?p=28" target="_blank" rel="external">http://www.picksomething.cn/?p=28</a><br><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></p>
+<hr>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ssh-key/">ssh key</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/24/git-sshkey配置/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/24/git-sshkey配置/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/23/gitbook/" title="gitbook" itemprop="url">gitbook</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-23T14:40:15.000Z" itemprop="datePublished"> 发表于 2015-03-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="git"><strong>git</strong></h5><p>git 知识学习的地址,<a href="http://git-scm.com/book/en/v2" target="_blank" rel="external">git book pro</a>, on line site</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/23/gitbook/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/23/gitbook/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/22/AndroidPush方案/" title="AndroidPush方案" itemprop="url">AndroidPush方案</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-22T15:02:11.000Z" itemprop="datePublished"> 发表于 2015-03-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/22/AndroidPush方案/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/22/AndroidPush方案/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/21/iOS消息推送/" title="iOS消息推送" itemprop="url">iOS消息推送</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-21T13:43:36.000Z" itemprop="datePublished"> 发表于 2015-03-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>iOS 推送原理</p>
+</blockquote>
+<p>这个可以参考这个<a href="https://blog.leancloud.cn/1163/" target="_blank" rel="external">AVOS Cloud</a>文章</p>
+<h5 id="iOS_证书制作">iOS 证书制作</h5><pre><code>证书分为开发证书, <span class="variable">Adhoc</span>证书, 发布版证书.
+</code></pre><h5 id="iOS_推送证书过期处理">iOS 推送证书过期处理</h5><pre><code>证书过一年会过期,需要重新revoke生成,最好csr文件是同一个.推送只是跟<span class="keyword">push</span> APNS token有关系，跟其他证书无关.(特别是服务端)
+</code></pre><h6 id="iOS_代码运行逻辑">iOS 代码运行逻辑</h6><pre><code>推送发生的时候，有<span class="number">3</span>种情况
+- 前台运行
+  这种情况下，程序不会有任何提示音，程序会执行以下的代码：
+          - (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
+          - didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo  
+          - fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler{
+             //userInfo 会有推送的内容
+         }
+
+- 后台运行
+    会有推送提示声音，内容等。这个时候，会有<span class="number">3</span>种行为，可以重新进入到程序，<span class="number">2</span>种不同的表现形式
+     - 点击程序icon，双击home，点击程序这<span class="number">2</span>种行为
+       这种情况，不执行任何代码。
+     - 通过推送消息栏，进入程序，程序会执行以下的代码：
+       - (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
+       - didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo 
+       - fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler {
+            //userInfo 会有推送的内容
+      }
+- 程序关闭
+  会有推送提示声音，内容等。这个时候如果按照正常的方式进入程序，一切都一样，如果是通过通知栏的方式进入的程序，会有以下的区别。首先程序启动的时候，
+  (<span class="type">BOOL</span>)application:(<span class="type">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="type">NSDictionary</span> *)launchOptions{
+  launchOptions 会有值，可以使用key，判断是远程推送的key，<span class="type">UIRemoteNotificationType</span>
+  }
+  接下来，继续会调用以下的代码：
+  (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
+       didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo 
+       fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler {
+            //userInfo 会有推送的内容
+      }
+</code></pre><h6 id="iOS_推送提示声音如何修改">iOS 推送提示声音如何修改</h6><pre><code><span class="bullet">1. </span>服务端， 在payload中，json串中,  sound: push.m4a,  
+<span class="bullet">2. </span>iOS, 添加跟服务端一样的声音文件到项目工程中即可
+只要完成2项，就可以完成替换声音
+</code></pre><h5 id="iOS推送测试">iOS推送测试</h5><pre><code>可以使用<span class="keyword">Mac</span> 上的PushMeBaby做测试，不过目前测试失败，估计API升级导致的原因。
+</code></pre><p>可以参考如下的文章<br>     Php的测试方案也失效了，具体没去了解原因(估计是证书制作的方法换了)。</p>
+<ul>
+<li><a href="http://www.cnblogs.com/gpwzw/archive/2012/03/31/apple_push_notification_services_tutorial_part_1-2.html" target="_blank" rel="external">http://www.cnblogs.com/gpwzw/archive/2012/03/31/apple_push_notification_services_tutorial_part_1-2.html</a></li>
+<li><a href="http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1" target="_blank" rel="external">http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1</a></li>
+</ul>
+<p>有效的php证书制作方法:</p>
+<h5 id="Java推送">Java推送</h5><p>Java推送用的比较多的开源lib,<a href="https://github.com/notnoop/java-apns" target="_blank" rel="external">java-apns</a>, 还有JavaPNS,2个lib的比较:</p>
+<ul>
+<li><strong>JavaPNS</strong> <pre><code>优点是简单，但缺点也很明显，效率不高，没有考虑各种通知发送出错的情况。这个库适合那些每天通知发送量特别小，并且用户收没收到也无所谓的应用
+</code></pre></li>
+<li><p><strong>java-apns</strong><br>   notnoop的Java APNS就要强大很多，目前它应该是使用最多的Java类库。随着使用的加深，发现它有很多不完善之处。最严重的问题是，运行一段时间后就死掉了，通知再也发不出去了，但重启下就又恢复了。经查，应该是死锁了，通知堆积在内存中并没有真正发出去。这对于对消息送达率和及时性要求非常高的聊天软件来说，是不能忍受的。</p>
+<pre><code>可以使用java<span class="attribute">-apns</span>的项目,用来测试iOS 的推送, 比较方便<span class="built_in">.</span>遇到的问题，会经常性出现，ssl <span class="keyword">handle</span>建立失败，被对方关闭的问题。
+</code></pre></li>
+<li><strong>pushy</strong><br>  测试下来，当有很多数据的情况下，会有2~5分钟的延迟推送现象发生。</li>
+</ul>
+<hr>
+<p>目前,暂时没有分析其他java lib, 目前有<a href="https://github.com/RamosLi/dbay-apns-for-java" target="_blank" rel="external">dbay-apns-for-java</a> .<a href="https://github.com/relayrides/pushy" target="_blank" rel="external">pushy</a>, 后续需要测试分析,性能,<br>主要是对长链接的处理.(未完待续)</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS推送/">iOS推送</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/21/iOS消息推送/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/21/iOS消息推送/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/20/Android知识点分析汇总/" title="Android知识点分析汇总" itemprop="url">Android知识点分析汇总</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-03-20T13:53:03.000Z" itemprop="datePublished"> 发表于 2015-03-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="消息机制">消息机制</h5><p><a href="http://www.cnblogs.com/codingmyworld/archive/2011/09/14/2174255.html" target="_blank" rel="external">Handle,Message,Loop</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/原理分析/">原理分析</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/03/20/Android知识点分析汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/20/Android知识点分析汇总/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/C/" title="C">C<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Mac-command-line/" title="Mac command line">Mac command line<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Terminal/" title="Terminal">Terminal<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ionic/" title="ionic">ionic<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/npm/" title="npm">npm<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/nvm/" title="nvm">nvm<sup>1</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/vue/" title="vue">vue<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/web前端/" title="web前端">web前端<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/技术书籍/" title="技术书籍">技术书籍<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/搭建博客/" title="搭建博客">搭建博客<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络工具/" title="网络工具">网络工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/源码分析/" title="源码分析">源码分析<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/goagent/" title="goagent">goagent<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UI-Signal/" title="UI Signal">UI Signal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/iOS推送/" title="iOS推送">iOS推送<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Display/" title="Display">Display<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Kim Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/woshixhs" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="http://yoursite.com/about" target="_blank" title="Kim">Kim</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"woshixhs"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9248c391a20a2221c43dee9af4505b69' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+ </html>
