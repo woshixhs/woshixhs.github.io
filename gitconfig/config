@@ -3,6 +3,8 @@
 	filemode = true
 	bare = false
 	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
 [remote "origin"]
 	url = git@github.com:woshixhs/woshixhs.github.io.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
@@ -10,8 +12,8 @@
 	remote = origin
 	merge = refs/heads/master
 [branch "source"]
-	remote = gitcafe
-	merge = refs/heads/master
-[remote "gitcafe"]
-	url = git@gitcafe.com:woshixhs/woshixhs.git
-	fetch = +refs/heads/*:refs/remotes/gitcafe/*
+	remote = origin
+	merge = refs/heads/source
+[remote "coding"]
+	url = git@git.coding.net:woshixhs/woshixhs.git
+	fetch = +refs/heads/*:refs/remotes/coding/*
