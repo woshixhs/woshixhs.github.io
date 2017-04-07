@@ -59,6 +59,8 @@ tags:
 
 * [书籍介绍](https://zhuanlan.zhihu.com/p/21566058?utm_source=wechat_session&utm_medium=social)
 
+* [python_ebook](https://github.com/shihyu/python_ebook)
+
 * [one-python](https://github.com/geekan/one-python) We don't need a lot of libraries. We just need the best ones. | Unofficial recommended first choice.
 
 * [awesome-python](https://github.com/vinta/awesome-python) A curated list of awesome Python frameworks, libraries, software and resources http://awesome-python.com/
