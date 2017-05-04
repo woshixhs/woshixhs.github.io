@@ -4,35 +4,44 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>ionic 问题汇总 | Kim&#39;s blog</title>
+    <title>Mac php开发环境 安装 | Kim&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kim">
     
 
     
-    <meta name="description" content="Error: spawn EACCESError: spawn EACCES
-at exports._errnoException (util.js:746:11)
-at ChildProcess.spawn (child_process.js:1162:11)
-at Object.exports.spawn (child_process.js:995:9)
-at Object.exports.s">
+    <meta name="description" content="php按照之前如何需要之前哪些选项，可以使用命令brew info php71安装命令brew install php71 \
+--with-debug \
+--with-homebrew-curl \
+--with-homebrew-libxslt \
+--with-imap \
+mysql安装命令brew install mysql
+nginx安装命令brew install nginx
+参考">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ionic 问题汇总">
-<meta property="og:url" content="http://yoursite.com/2015/04/19/ionic-问题汇总/index.html">
+<meta property="og:title" content="Mac php开发环境 安装">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/Mac-php-安装/index.html">
 <meta property="og:site_name" content="Kim's blog">
-<meta property="og:description" content="Error: spawn EACCESError: spawn EACCES
-at exports._errnoException (util.js:746:11)
-at ChildProcess.spawn (child_process.js:1162:11)
-at Object.exports.spawn (child_process.js:995:9)
-at Object.exports.s">
-<meta property="og:updated_time" content="2017-03-10T04:29:43.000Z">
+<meta property="og:description" content="php按照之前如何需要之前哪些选项，可以使用命令brew info php71安装命令brew install php71 \
+--with-debug \
+--with-homebrew-curl \
+--with-homebrew-libxslt \
+--with-imap \
+mysql安装命令brew install mysql
+nginx安装命令brew install nginx
+参考">
+<meta property="og:updated_time" content="2017-05-04T14:24:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ionic 问题汇总">
-<meta name="twitter:description" content="Error: spawn EACCESError: spawn EACCES
-at exports._errnoException (util.js:746:11)
-at ChildProcess.spawn (child_process.js:1162:11)
-at Object.exports.spawn (child_process.js:995:9)
-at Object.exports.s">
+<meta name="twitter:title" content="Mac php开发环境 安装">
+<meta name="twitter:description" content="php按照之前如何需要之前哪些选项，可以使用命令brew info php71安装命令brew install php71 \
+--with-debug \
+--with-homebrew-curl \
+--with-homebrew-libxslt \
+--with-imap \
+mysql安装命令brew install mysql
+nginx安装命令brew install nginx
+参考">
 
     
     <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
@@ -91,14 +100,14 @@ at Object.exports.s">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/19/ionic-问题汇总/" title="ionic 问题汇总" itemprop="url">ionic 问题汇总</a>
+      <a href="/2016/04/18/Mac-php-安装/" title="Mac php开发环境 安装" itemprop="url">Mac php开发环境 安装</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-19T12:50:35.000Z" itemprop="datePublished"> 发表于 2015-04-19</time>
+    <time datetime="2016-04-18T07:42:56.000Z" itemprop="datePublished"> 发表于 2016-04-18</time>
     
   </p>
 </header>
@@ -107,38 +116,24 @@ at Object.exports.s">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Error:_spawn_EACCES"><span class="toc-number">1.</span> <span class="toc-text">Error: spawn EACCES</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Error:_EACCES,_permission_denied"><span class="toc-number">2.</span> <span class="toc-text">Error: EACCES, permission denied</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#php"><span class="toc-number">1.</span> <span class="toc-text">php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql"><span class="toc-number">2.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx"><span class="toc-number">3.</span> <span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
 		
 		</div>
 		
-		<h5 id="Error:_spawn_EACCES"><strong>Error: spawn EACCES</strong></h5><pre><code><span class="string">Error:</span> spawn EACCES
-at exports._errnoException (util.<span class="string">js:</span><span class="number">746</span>:<span class="number">11</span>)
-at ChildProcess.spawn (child_process.<span class="string">js:</span><span class="number">1162</span>:<span class="number">11</span>)
-at Object.exports.spawn (child_process.<span class="string">js:</span><span class="number">995</span>:<span class="number">9</span>)
-at Object.exports.spawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>superspawn.<span class="string">js:</span><span class="number">100</span>:<span class="number">31</span>)
-at runScriptViaChildProcessSpawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">188</span>:<span class="number">23</span>)
-at runScript (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">131</span>:<span class="number">16</span>)
-at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">114</span>:<span class="number">20</span>
-at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
-at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
-at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
-解决方案: 先执行命令
-ionic hooks add
-</code></pre><p><a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
-<h5 id="Error:_EACCES,_permission_denied"><strong>Error: EACCES, permission denied</strong></h5><pre><code><span class="string">Error:</span> EACCES, permission denied <span class="string">'/home/kim/work/web_html5_app/sidemunuDemo/platforms/android/assets/www/cordova_plugins.js'</span>
-at Error (native)
-at Object.fs.openSync (fs.<span class="string">js:</span><span class="number">500</span>:<span class="number">18</span>)
-at Object.fs.writeFileSync (fs.<span class="string">js:</span><span class="number">1099</span>:<span class="number">15</span>)
-at Object.handlePrepare (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/plugman/</span>prepare.<span class="string">js:</span><span class="number">155</span>:<span class="number">8</span>)
-at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">108</span>:<span class="number">21</span>
-at Array.map (native)
-at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">73</span>:<span class="number">40</span>
-at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
-at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
-at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
-解决方案:执行以下命令
-sudo chmod -R a+rwx /appfolder
-</code></pre><p>   <a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
+		<h4 id="php">php</h4><p>按照之前如何需要之前哪些选项，可以使用命令<br><code>brew info php71</code><br>安装命令<br><code>brew install php71 \
+--with-debug \
+--with-homebrew-curl \
+--with-homebrew-libxslt \
+--with-imap \</code></p>
+<h4 id="mysql">mysql</h4><p>安装命令<br><code>brew install mysql</code></p>
+<h4 id="nginx">nginx</h4><p>安装命令<br><code>brew install nginx</code></p>
+<h4 id="参考资料">参考资料</h4><p><a href="https://segmentfault.com/a/1190000002963355" target="_blank" rel="external">https://segmentfault.com/a/1190000002963355</a></p>
+<p><a href="http://avnpc.com/pages/install-lnmp-on-osx" target="_blank" rel="external">http://avnpc.com/pages/install-lnmp-on-osx</a></p>
+<p><a href="http://yansu.org/2013/12/11/lamp-in-mac.html" target="_blank" rel="external">http://yansu.org/2013/12/11/lamp-in-mac.html</a></p>
+<p><a href="http://my.oschina.net/sunxichao/blog/366282" target="_blank" rel="external">http://my.oschina.net/sunxichao/blog/366282</a></p>
+<p><a href="http://blog.devtang.com/2014/02/26/the-introduction-of-homebrew-and-brewcask/" target="_blank" rel="external">http://blog.devtang.com/2014/02/26/the-introduction-of-homebrew-and-brewcask/</a></p>
+<p><a href="http://avnpc.com/pages/install-lnmp-on-osx" target="_blank" rel="external">http://avnpc.com/pages/install-lnmp-on-osx</a></p>
+<p><a href="http://jigsawye.com/2016/02/01/setup-laravel-development-environment-with-homebrew/" target="_blank" rel="external">http://jigsawye.com/2016/02/01/setup-laravel-development-environment-with-homebrew/</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -146,9 +141,14 @@ sudo chmod -R a+rwx /appfolder
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/ionic/">ionic</a>
+  <a class="article-category-link" href="/categories/php/">php</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/php/">php</a>
+  </div>
 
 </div>
 
@@ -156,7 +156,7 @@ sudo chmod -R a+rwx /appfolder
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/04/19/ionic-问题汇总/" data-title="ionic 问题汇总 | Kim&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/18/Mac-php-安装/" data-title="Mac php开发环境 安装 | Kim&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -170,18 +170,18 @@ sudo chmod -R a+rwx /appfolder
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/04/20/Samurai源码分析/" title="Samurai源码分析">
+ <a href="/2016/05/06/awesome-laravel/" title="awesome-laravel">
   <strong>上一篇：</strong><br/>
   <span>
-  Samurai源码分析</span>
+  awesome-laravel</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/04/19/ionic-调试工具/"  title="ionic 调试工具">
+<a href="/2016/04/02/git-推送多个远程代码仓库/"  title="git 推送多个远程代码仓库">
  <strong>下一篇：</strong><br/> 
- <span>ionic 调试工具
+ <span>git 推送多个远程代码仓库
 </span>
 </a>
 </div>
@@ -190,7 +190,7 @@ sudo chmod -R a+rwx /appfolder
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/04/19/ionic-问题汇总/" data-title="ionic 问题汇总" data-url="http://yoursite.com/2015/04/19/ionic-问题汇总/"></div>
+	<div class="ds-thread" data-thread-key="2016/04/18/Mac-php-安装/" data-title="Mac php开发环境 安装" data-url="http://yoursite.com/2016/04/18/Mac-php-安装/"></div>
 </section>
 
 
@@ -200,7 +200,7 @@ sudo chmod -R a+rwx /appfolder
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Error:_spawn_EACCES"><span class="toc-number">1.</span> <span class="toc-text">Error: spawn EACCES</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Error:_EACCES,_permission_denied"><span class="toc-number">2.</span> <span class="toc-text">Error: EACCES, permission denied</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#php"><span class="toc-number">1.</span> <span class="toc-text">php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql"><span class="toc-number">2.</span> <span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx"><span class="toc-number">3.</span> <span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
  
   </div>
 
