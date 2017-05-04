@@ -80,6 +80,58 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/21/samurai启动分析/" title="samurai启动分析" itemprop="url">samurai启动分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-21T07:41:03.000Z" itemprop="datePublished"> 发表于 2015-04-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/21/samurai启动分析/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/21/samurai启动分析/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/21/samurai宏解读/" title="samurai宏解读" itemprop="url">samurai宏解读</a>
   </h1>
   <p class="article-author">By
@@ -694,79 +746,6 @@ sudo chmod -R a+rwx /appfolder
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/10/iOS-UI-Signal分析/" title="iOS UI Signal分析" itemprop="url">iOS UI Signal分析</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-10T10:01:26.000Z" itemprop="datePublished"> 发表于 2015-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h5 id="UI_Signal"><strong>UI Signal</strong></h5><pre><code>事件响应，传递，是整个UI系统的关键。这里使用了Bee UI <span class="keyword">Signal</span>, 重新定义了UI的事件传递，也了解下UI中的重要的响应链。
-</code></pre><ul>
-<li><p>view的物理布局</p>
-<pre><code><span class="built_in">UIViewController</span>中，里面有一个View1，之后View1里面有个View2，
-</code></pre></li>
-<li><p>事件的传递<br>   View2可以接受点击事件，View1也可以接受点击事件。当点击View2的时候，整个消息链路是怎么样的？<br>   整个消息链路是透传的，就是转发接受到的消息，那整个消息链路是View2-&gt;View1&gt;UIViewController,<br>   消息是这样传递的，处理结果刚好相反，递归调用。这里，你也可以不传递消息，例如链路可以是View2，或是View2-&gt;View1</p>
-</li>
-<li><p>场景使用<br> 等具体应用的时候，每个View的容器，就可以添加自己感兴趣的事件，进行响应，其他就不用关心了。</p>
-</li>
-</ul>
-<h5 id="Demo"><strong>Demo</strong></h5><p> <a href="https://github.com/gelosie/ios-ui-signal" target="_blank" rel="external">ios-ui-signal</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/UI-Signal/">UI Signal</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/10/iOS-UI-Signal分析/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/10/iOS-UI-Signal分析/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -845,7 +824,7 @@ sudo chmod -R a+rwx /appfolder
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>2</sup></a></li>
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
 		  
 		
 		  
@@ -878,11 +857,11 @@ sudo chmod -R a+rwx /appfolder
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
 			
 		
 			
@@ -894,10 +873,6 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/php/" title="php">php<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
 			
 		
@@ -906,15 +881,19 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
+				<li><a href="/tags/php/" title="php">php<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
 			
 		
 			
@@ -930,15 +909,15 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/vue/" title="vue">vue<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
 			
 		
 			
@@ -954,7 +933,7 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/Debug技术/" title="Debug技术">Debug技术<sup>1</sup></a></li>
+				<li><a href="/tags/Display/" title="Display">Display<sup>1</sup></a></li>
 			
 		
 		</ul>

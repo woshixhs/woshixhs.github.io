@@ -80,6 +80,96 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/12/07/前端切图/" title="前端切图" itemprop="url">前端切图</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2016-12-07T02:39:01.000Z" itemprop="datePublished"> 发表于 2016-12-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="前端切图发展">前端切图发展</h3><ul>
+<li><p>前端切图的历史</p>
+<p><a href="http://www.maxzhang.com/2015/08/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E5%88%87%E8%BF%87%E7%9A%84%E9%A1%B5%E9%9D%A2/" target="_blank" rel="external">那些年我们一起切过的页面</a></p>
+</li>
+<li><p>前端切图流程讨论</p>
+</li>
+</ul>
+<pre><code>前端切图流程:
+一般一个熟手一天完成<span class="number">4</span>个页面是没啥问题的，当然很重量级的前端效果除外，下面是我总结关于做页面的流程：
+
+
+
+其实标准的网制作完成的工作实际是：psd <span class="keyword">to</span> html，一般情况下，我们会拿到美工的psd,这时候不同的人会有不同的做法：
+<span class="number">1.</span>打开fireworks将图片切割导出为html。
+<span class="number">2.</span>直接在dreamweaver之类的工具去拖拉布局，导入相关的图片,flash资源。
+<span class="number">3.</span>先在ps中完成切图后，在文本编辑器中看着效果图一步步的制作。
+以上是大多被采用的方法，但都不好：
+第一种方法最为不好，这样的代码根本不具维护性和可读性。
+第二种方法也不好，代码难免会有冗余，做出来的东西基本需要排查一遍。
+第三种方法也不好，因为你需要看效果图一点点的拼，也就是说写html标签的时候，你在不断的假设这块要怎么去显示。
+正确的做法是：
+<span class="number">1.</span>拿到psd后，先不要做别的，直接在文本编辑器中将网页的框架写出来，不要假设这块将来css要去怎么渲染，完全自然化的标签，不加任何的css。
+<span class="number">2.</span>写完之后在各个浏览器运行之后确保大体定位都没有问题。
+<span class="number">3.</span>书写总体css,这里的css只负责大块的定位及样式。
+<span class="number">4.</span>切出需要的图片资源，在写好的框架中一点点的去构造，不断的调试，最终为成品。
+<span class="number">5.</span>最后，为自己的代码添加注释，在css，html中都要合适的为自己的代码添加注释。
+要想做出能灵活切换皮肤，让css主导表现，还有很多要注意的地方，但大体的流程就是这样的，当然我们一开始不能直接就做到先写html，但起码要有这个意识，循序渐进。。。
+</code></pre><ul>
+<li><p>切图学习</p>
+<p> <a href="http://www.jianshu.com/p/69b74b84e687" target="_blank" rel="external">开始前端开发（PhotoShop切图</a></p>
+<p> <a href="https://github.com/xiangpaopao/blog/issues/2" target="_blank" rel="external">前端技能之切图</a></p>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/web前端/">web前端</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/12/07/前端切图/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/12/07/前端切图/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/11/24/JavaScript学习进程/" title="JavaScript学习进程" itemprop="url">JavaScript学习进程</a>
   </h1>
   <p class="article-author">By
@@ -691,69 +781,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/10/12/iOS界面保持流畅/" title="iOS界面保持流畅" itemprop="url">iOS界面保持流畅</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2016-10-12T02:50:07.000Z" itemprop="datePublished"> 发表于 2016-10-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="如何让iOS界面保持流畅">如何让iOS界面保持流畅</h2><p><a href="http://www.cnblogs.com/ioriwellings/p/5011993.html" target="_blank" rel="external">分析使用AsyncDisplayKit保持界面流畅</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Display/">Display</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/10/12/iOS界面保持流畅/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/10/12/iOS界面保持流畅/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -832,7 +859,7 @@
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>2</sup></a></li>
+			<li><a href="/categories/php/" title="php">php<sup>3</sup></a></li>
 		  
 		
 		  
@@ -865,11 +892,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
 			
 		
 			
@@ -881,10 +908,6 @@
 			
 		
 			
-				<li><a href="/tags/php/" title="php">php<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
 			
 		
@@ -893,15 +916,19 @@
 			
 		
 			
+				<li><a href="/tags/php/" title="php">php<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
 			
 		
 			
@@ -917,15 +944,15 @@
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/vue/" title="vue">vue<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
 			
 		
 			
@@ -941,7 +968,7 @@
 			
 		
 			
-				<li><a href="/tags/Debug技术/" title="Debug技术">Debug技术<sup>1</sup></a></li>
+				<li><a href="/tags/Display/" title="Display">Display<sup>1</sup></a></li>
 			
 		
 		</ul>
