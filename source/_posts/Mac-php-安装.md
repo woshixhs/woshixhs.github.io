@@ -8,10 +8,11 @@ date: 2016-04-18 15:42:56
 
 #### php
 
-按照之前如何需要之前哪些选项，可以使用命令
+按照之前查看有哪些选项，可以使用命令
 ``
   brew info php71
 ``
+
 安装命令
 ``
 brew install php71 \
@@ -20,6 +21,11 @@ brew install php71 \
 --with-homebrew-libxslt \
 --with-imap \
 ``
+
+#### 安装php xdebug
+  ``
+  brew install php71-xdebug --build-from-source
+  ``
 
 #### mysql
 
