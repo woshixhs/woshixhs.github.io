@@ -80,6 +80,81 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/02/写博客命令/" title="写博客命令" itemprop="url">写博客命令</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-01T16:03:51.000Z" itemprop="datePublished"> 发表于 2016-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>写博客常用命令</p>
+</blockquote>
+<h5 id="环境准备">环境准备</h5><pre><code>整个环境在<span class="built_in">source</span> branch就可以了，
+不需要切换到生成的静态文件分支。
+</code></pre><h5 id="第一次写博客">第一次写博客</h5><pre><code>$ <span class="tag">hexo</span> <span class="tag">init</span> <span class="attr_selector">[folder]</span>
+如果已经写过了，就不需要这个命令了。
+</code></pre><h5 id="写新的一篇博客">写新的一篇博客</h5><pre><code>$ hexo <span class="keyword">new</span> [layout] &lt;title&gt;
+</code></pre><p>新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h5 id="发布草稿">发布草稿</h5><pre><code>$ hexo publish [layout] <span class="tag">&lt;<span class="title">filename</span>&gt;</span>
+</code></pre><p>写新的博客，如果是layout draft，需要发布草稿，移到发布的目录。<br>这里的layout，也是draft</p>
+<h5 id="写完文章准备部署文章">写完文章准备部署文章</h5><pre><code><span class="variable">$ </span>hexo generate
+</code></pre><h5 id="部署到网站">部署到网站</h5><pre><code><span class="variable">$ </span>hexo deploy
+</code></pre><p>部署到网站上，完成同步数据。</p>
+<h5 id="同步source文章源码">同步source文章源码</h5><pre><code>$ git <span class="keyword">push</span>, 同步到github，<span class="keyword">source</span> -&gt; <span class="keyword">source</span>
+$ git <span class="keyword">push</span> gitcafe <span class="keyword">source</span>:master, 
+同步到github，<span class="keyword">source</span> -&gt; master
+gitcafe，需要把源码branch跟gitcafe上面的master分支做关联
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/搭建博客/">搭建博客</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/02/写博客命令/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/02/写博客命令/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/24/iOS-审核知识/" title="iOS 审核知识" itemprop="url">iOS 审核知识</a>
   </h1>
   <p class="article-author">By
@@ -633,70 +708,6 @@ sudo chmod -R a+rwx /appfolder
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/18/IDEA-Using-Ionic-Cordova/" title="IDEA Using Ionic Cordova " itemprop="url">IDEA Using Ionic Cordova </a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-18T15:10:29.000Z" itemprop="datePublished"> 发表于 2015-04-18</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h5 id="ionicFramework"><strong>ionicFramework</strong></h5><p><a href="http://ionicframework.com/" target="_blank" rel="external">ionicframe.com</a>是目前一个性能还可以的跨平台的移动端框架.下面是对android平台的分析<br><a href="http://blog.csdn.net/zoutongyuan/article/details/41910903" target="_blank" rel="external">http://blog.csdn.net/zoutongyuan/article/details/41910903</a></p>
-<h5 id="idea插件集成ionic"><strong>idea插件集成ionic</strong></h5><p>参考资料:<br><a href="https://www.jetbrains.com/idea/help/using-phonegap-cordova.html" target="_blank" rel="external">https://www.jetbrains.com/idea/help/using-phonegap-cordova.html</a><br><a href="https://confluence.jetbrains.com/display/IntelliJIDEA/PhoneGap%2C+Cordova+and+Ionic" target="_blank" rel="external">https://confluence.jetbrains.com/display/IntelliJIDEA/PhoneGap%2C+Cordova+and+Ionic</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/ionic/">ionic</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Web/">Web</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/18/IDEA-Using-Ionic-Cordova/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/18/IDEA-Using-Ionic-Cordova/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -755,7 +766,7 @@ sudo chmod -R a+rwx /appfolder
 		  
 		
 		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>13</sup></a></li>
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>14</sup></a></li>
 		  
 		
 		  
@@ -808,11 +819,11 @@ sudo chmod -R a+rwx /appfolder
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
 			
 		
 			
@@ -825,6 +836,10 @@ sudo chmod -R a+rwx /appfolder
 		
 			
 				<li><a href="/tags/php/" title="php">php<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/App-store/" title="App store">App store<sup>2</sup></a></li>
 			
 		
 			
@@ -852,7 +867,7 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
 			
 		
 			
@@ -860,15 +875,7 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/App-store/" title="App store">App store<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
@@ -876,7 +883,11 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
 			
 		
 			
