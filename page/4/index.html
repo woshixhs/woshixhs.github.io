@@ -80,6 +80,88 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/02/git-配置多个ssh-key/" title="git 配置多个ssh key" itemprop="url">git 配置多个ssh key</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-02T15:10:49.000Z" itemprop="datePublished"> 发表于 2016-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>先配置1个ssh key</p>
+</blockquote>
+<h5 id="生成ssh_key同时保存文件名">生成ssh key同时保存文件名</h5><p>使用ssh-keygen 生成，最后阶段，选择1个名字保存</p>
+<h5 id="上次key到website">上次key到website</h5><h5 id="添加私钥">添加私钥</h5><pre><code><span class="variable">$ </span>ssh-add ~<span class="regexp">/.ssh/id</span>_rsa
+</code></pre><p>如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：</p>
+<pre><code><span class="variable">$ </span>ssh-agent bash
+</code></pre><p>然后再运行ssh-add命令。</p>
+<pre><code><span class="preprocessor"># 可以通过 ssh-add -l 来确私钥列表</span>
+$ ssh-<span class="keyword">add</span> -l
+<span class="preprocessor"># 可以通过 ssh-add -D 来清空私钥列表</span>
+$ ssh-<span class="keyword">add</span> -D
+</code></pre><h5 id="新增并配置config文件">新增并配置config文件</h5><p>如果config不存在，先添加；存在则自己修改</p>
+<pre><code>touch ~<span class="regexp">/.ssh/config</span>
+</code></pre><p>在config 文件里添加如下内容</p>
+<pre><code><span class="id">#bitbucket</span>
+Host bitbucket<span class="class">.org</span>
+HostName bitbucket<span class="class">.org</span>
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_bitbucket
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ssh-key/">ssh key</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/02/git-配置多个ssh-key/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/02/git-配置多个ssh-key/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/04/02/写博客命令/" title="写博客命令" itemprop="url">写博客命令</a>
   </h1>
   <p class="article-author">By
@@ -642,72 +724,6 @@ sudo chmod -R a+rwx /appfolder
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/19/ionic-调试工具/" title="ionic 调试工具" itemprop="url">ionic 调试工具</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-19T02:34:34.000Z" itemprop="datePublished"> 发表于 2015-04-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h5 id="debug"><strong>debug</strong></h5><ul>
-<li><a href="http://rensanning.iteye.com/blog/2018417" target="_blank" rel="external">Cordova 调试工具介绍</a></li>
-<li><a href="http://jetgeng.github.io/blog/html/2015/01/21/ionicdebug.html" target="_blank" rel="external">ionic项目通用调试介绍</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/ionic/">ionic</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/debug/">debug</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/19/ionic-调试工具/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/19/ionic-调试工具/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -786,7 +802,7 @@ sudo chmod -R a+rwx /appfolder
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>4</sup></a></li>
+			<li><a href="/categories/php/" title="php">php<sup>5</sup></a></li>
 		  
 		
 		  
@@ -819,11 +835,11 @@ sudo chmod -R a+rwx /appfolder
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
+				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
+				<li><a href="/tags/Axure/" title="Axure">Axure<sup>2</sup></a></li>
 			
 		
 			
@@ -851,11 +867,7 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
 			
 		
 			
@@ -863,15 +875,11 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/BOOK/" title="BOOK">BOOK<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
+				<li><a href="/tags/Laravel/" title="Laravel">Laravel<sup>1</sup></a></li>
 			
 		
 			
@@ -879,11 +887,11 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
-				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
 			
 		
 			
@@ -891,7 +899,15 @@ sudo chmod -R a+rwx /appfolder
 			
 		
 			
+				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
