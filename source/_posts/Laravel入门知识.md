@@ -15,6 +15,11 @@ date: 2017-05-05 09:40:32
 
 [Laravel 5.1 基础教程](http://laravelacademy.org/laravel-tutorial-5_1)
 
+[Laravel 文档英文](https://laravel.com/docs/5.4)
+
+[Laravel 文档中文](https://docs.golaravel.com/docs/5.4/installation/)
+
+
 #### 帮助信息
 
 [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
