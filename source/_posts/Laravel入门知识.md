@@ -1,8 +1,9 @@
 title: Laravel入门知识
-date: 2017-05-05 09:40:32
 categories: php
 tags: Laravel
+date: 2017-05-05 09:40:32
 ---
+
 
 #### 入门示例code
 
@@ -17,3 +18,5 @@ tags: Laravel
 #### 帮助信息
 
 [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+
+[laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)参考链接http://laravelacademy.org/post/2774.html
