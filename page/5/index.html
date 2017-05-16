@@ -633,43 +633,28 @@
 </header>
     <div class="article-content">
         
-        <h5 id="创建git"><strong>创建git</strong></h5><pre><code><span class="title">git</span> init
-</code></pre><h5 id="添加远程仓库"><strong>添加远程仓库</strong></h5><pre><code><span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="attr_selector">[shortname]</span> <span class="attr_selector">[url]</span>
-<span class="tag">git</span> <span class="tag">remote</span> <span class="tag">add</span> <span class="tag">origin</span> <span class="tag">git</span><span class="at_rule">@<span class="keyword">server-name:path/repo-name.git</span>  
+        <h5 id="创建git"><strong>创建git</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="添加远程仓库"><strong>添加远程仓库</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add [shortname] [url]</span><br><span class="line">git remote add origin git@server-name:path/repo-name.git</span><br></pre></td></tr></table></figure></span>
+
 添加一个远程库, 这样就把本地跟远程的git url地址绑定了
-通过这个方法,可以对同一个仓库,添加多个远程仓库</span>
-</code></pre><h5 id="删除远程仓库"><strong>删除远程仓库</strong></h5><pre><code><span class="variable">$ </span>git remote rm 
-<span class="variable">$ </span>git remote rm  coding
-</code></pre><h5 id="查看远程仓库"><strong>查看远程仓库</strong></h5><pre><code>git remote
-git <span class="keyword">remove</span> -v
-</code></pre><h5 id="添加本地文件到stash"><strong>添加本地文件到stash</strong></h5><pre><code>git <span class="built_in">add</span> <span class="built_in">file</span>
-</code></pre><h5 id="本地提交到仓库"><strong>本地提交到仓库</strong></h5><pre><code><span class="title">git</span> commit
-</code></pre><h5 id="推送分支到远程"><strong>推送分支到远程</strong></h5><pre><code>git push <span class="tag">&lt;<span class="title">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="title">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="title">远程分支名</span>&gt;</span>
-git push, 
-后续参数都省略,或是已经本地跟远程已经建立关联
-git push origin master,
-一般默认推送到master分支, 本地分支跟远程分支同名
-</code></pre><h5 id="获取远程分支"><strong>获取远程分支</strong></h5><pre><code>git clone,  获取远程分支的代码
-git pull, 获取当前分支的最新代码
-git pull = git fetch + <span class="operator"><span class="keyword">merge</span> <span class="keyword">to</span> <span class="keyword">local</span>
-git <span class="keyword">fetch</span> origin
-git <span class="keyword">merge</span> origin/<span class="keyword">next</span>
-git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; </span>
-</code></pre><h5 id="切换远程"><strong>切换远程</strong></h5><pre><code>git checkout , 切换分支
-git checkout -b <span class="built_in">dev</span> origin/<span class="built_in">dev</span>, 
-#创建远程origin的<span class="built_in">dev</span>分支到本地，并命名为<span class="built_in">dev</span>
-git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name，
-可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。
-</code></pre><h5 id="合并远程"><strong>合并远程</strong></h5><pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
-</code></pre><p>用于合并指定分支到当前分支,<br>是Fast-forward合并分支，这种模式下，删除分支后，会丢掉分支信息。</p>
-<pre><code>git <span class="keyword">merge</span> --<span class="keyword">no</span>-ff -<span class="keyword">m</span> <span class="string">"..."</span> &lt;branch&gt;
-</code></pre><p>—no-ff参数，表示禁用Fast forward<br>本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去</p>
-<h5 id="删除远程分支"><strong>删除远程分支</strong></h5><pre><code>git <span class="keyword">push</span> &lt;远程主机名&gt; --<span class="keyword">delete</span> &lt;远程分知名&gt; 
-git <span class="keyword">push</span> origin --<span class="keyword">delete</span> bugfix
-</code></pre><h5 id="删除本地分支"><strong>删除本地分支</strong></h5><pre><code>git branch <span class="operator">-d</span> xxx, 
-</code></pre><h5 id="查看分支命令"><strong>查看分支命令</strong></h5><pre><code>git branch  本地
-git branch -r 远程
-git branch -<span class="tag">a</span> 所有
+通过这个方法,可以对同一个仓库,添加多个远程仓库
+</code></pre><h5 id="删除远程仓库"><strong>删除远程仓库</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm</span><br><span class="line">$ git remote rm  coding</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="查看远程仓库"><strong>查看远程仓库</strong></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br><span class="line">git remove -v</span><br></pre></td></tr></table></figure>
+<h5 id="添加本地文件到stash"><strong>添加本地文件到stash</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add file</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="本地提交到仓库"><strong>本地提交到仓库</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="推送分支到远程"><strong>推送分支到远程</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br><span class="line">git push,</span><br><span class="line">后续参数都省略,或是已经本地跟远程已经建立关联</span><br><span class="line">git push origin master,</span><br><span class="line">一般默认推送到master分支, 本地分支跟远程分支同名</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="获取远程分支"><strong>获取远程分支</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone,  获取远程分支的代码</span><br><span class="line">git pull, 获取当前分支的最新代码</span><br><span class="line">git pull = git fetch + merge to local</span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/next</span><br><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="clone_tag仓库"><strong>clone tag仓库</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branch_name tag_name</span><br></pre></td></tr></table></figure></span>
+
+这样会从 tag 创建一个分支，然后就和普通的 git 操作一样了。
+否则如果你做了修改，git 可能会提示你当前处于一个“detached HEAD" 状态
+</code></pre><h5 id="切换远程"><strong>切换远程</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout , 切换分支</span><br><span class="line">git checkout -b dev origin/dev,</span><br><span class="line">#创建远程origin的dev分支到本地，并命名为dev</span><br><span class="line">git branch --set-upstream branch-name origin/branch-name，</span><br><span class="line">可以建立起本地分支和远程分支的关联，之后可以直接git pull从远程抓取分支。</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="合并远程"><strong>合并远程</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure></span>
+</code></pre><p>用于合并指定分支到当前分支,<br>是Fast-forward合并分支，这种模式下，删除分支后，会丢掉分支信息。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m &quot;...&quot; &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>—no-ff参数，表示禁用Fast forward<br>本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去</p>
+<h5 id="删除远程分支"><strong>删除远程分支</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; --delete &lt;远程分知名&gt;</span><br><span class="line">git push origin --delete bugfix</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="删除本地分支"><strong>删除本地分支</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d xxx,</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="查看分支命令"><strong>查看分支命令</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch  本地</span><br><span class="line">git branch -r 远程</span><br><span class="line">git branch -a 所有</span><br></pre></td></tr></table></figure></span>
 </code></pre><h5 id="撤销修改"><strong>撤销修改</strong></h5><p>修改了内容,不过没有通过git add file，添加到stash</p>
 <p>单个文件</p>
 <pre><code>git checkout -- <span class="keyword">file</span>
@@ -687,12 +672,9 @@ git branch -<span class="tag">a</span> 所有
 </code></pre><p>默认标签是打在最新提交的commit上的，可以打在一个commit id上面，</p>
 <pre><code>git tag &lt;<span class="property">name</span>&gt; commit <span class="property">id</span>
 </code></pre><p>这样就算当时没打标签，也可以补打标签</p>
-<p>创建带说明的标签</p>
-<pre><code>git tag -<span class="tag">a</span> &lt;tagname&gt; -m <span class="string">"..."</span>
--<span class="tag">a</span> 标签名字
-</code></pre><p>   －m 说明性文字</p>
-<h5 id="查看所有标签"><strong>查看所有标签</strong></h5><pre><code>git <span class="built_in">tag</span>
-</code></pre><h5 id="查看标签信息"><strong>查看标签信息</strong></h5><pre><code>git show <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
+<p>创建带说明的标签<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tagname&gt; -m &quot;...&quot;</span><br><span class="line">-a 标签名字</span><br><span class="line"> －m 说明性文字</span><br></pre></td></tr></table></figure></p>
+<h5 id="查看所有标签"><strong>查看所有标签</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure></span>
+</code></pre><h5 id="查看标签信息"><strong>查看标签信息</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;tagname&gt;</span><br></pre></td></tr></table></figure></span>
 </code></pre><h5 id="删除标签"><strong>删除标签</strong></h5><pre><code>git tag  －d <span class="tag">&lt;<span class="title">tagname</span>&gt;</span>
 </code></pre><p>删除本地标签</p>
 <p>如果要删除远程标签,必须先删除本地标签，之后删除远程标签</p>
@@ -929,10 +911,6 @@ git branch -<span class="tag">a</span> 所有
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/App-store/" title="App store">App store<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/热更新技术/" title="热更新技术">热更新技术<sup>2</sup></a></li>
 			
 		
@@ -953,6 +931,10 @@ git branch -<span class="tag">a</span> 所有
 			
 		
 			
+				<li><a href="/tags/App-store/" title="App store">App store<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ssh-key/" title="ssh key">ssh key<sup>2</sup></a></li>
 			
 		
@@ -961,7 +943,7 @@ git branch -<span class="tag">a</span> 所有
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
 			
 		
 			
@@ -969,27 +951,11 @@ git branch -<span class="tag">a</span> 所有
 			
 		
 			
-				<li><a href="/tags/Laravel/" title="Laravel">Laravel<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+				<li><a href="/tags/Laravel/" title="Laravel">Laravel<sup>1</sup></a></li>
 			
 		
 			
@@ -997,7 +963,23 @@ git branch -<span class="tag">a</span> 所有
 			
 		
 			
-				<li><a href="/tags/laravel/" title="laravel">laravel<sup>1</sup></a></li>
+				<li><a href="/tags/NSCoder-iOS归档/" title="NSCoder, iOS归档">NSCoder, iOS归档<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/awesome/" title="awesome">awesome<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
