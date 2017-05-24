@@ -177,6 +177,14 @@
 <p><a href="https://docs.golaravel.com/docs/5.4/installation/" target="_blank" rel="external">Laravel 文档中文</a></p>
 <h4 id="帮助信息">帮助信息</h4><p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">laravel-ide-helper</a></p>
 <p><a href="https://github.com/barryvdh/laravel-debugbar" target="_blank" rel="external">laravel-debugbar</a>参考链接<a href="http://laravelacademy.org/post/2774.html" target="_blank" rel="external">http://laravelacademy.org/post/2774.html</a></p>
+<p><a href="https://nwidart.com/laravel-modules/" target="_blank" rel="external">laravel-modules</a></p>
+<h4 id="添加模块后使用事项">添加模块后使用事项</h4><ul>
+<li><p>添加laravel-modules</p>
+<p>添加完成之后，需要修改项目根目录下的composer.json文件，添加autoloading PSR-4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/file: composer.json</span><br><span class="line">&quot;psr-4&quot;: &#123;</span><br><span class="line">&quot;App&quot;: &quot;app/&quot;,</span><br><span class="line">&quot;Modules&quot;: &quot;modules/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>之后需要运行命令 <code>compser dump-autoload</code></p>
 
         
         
@@ -358,73 +366,6 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/05/app-store如何删除app-id/" title="app store如何删除app id" itemprop="url">app store如何删除app id</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-05T09:01:44.000Z" itemprop="datePublished"> 发表于 2017-04-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h4 id="删除app_id">删除app id</h4><ul>
-<li>刚建立的app id<br>  可以直接删除</li>
-<li>已经在使用的app id<br>  先删除profile，等所有相关的证书，profile删除完了，可以删除id</li>
-<li>已经线上发布的app id<br>  可以通过转让应用转移给需要的人</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/App-store/">App store</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/04/05/app-store如何删除app-id/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/04/05/app-store如何删除app-id/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2017/04/05/app-store如何删除app-id-1/" title="app store如何删除app id" itemprop="url">app store如何删除app id</a>
   </h1>
   <p class="article-author">By
@@ -473,6 +414,73 @@
 	
 	  	<span></span>
 		<a href="/2017/04/05/app-store如何删除app-id-1/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/04/05/app-store如何删除app-id-1/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/05/app-store如何删除app-id/" title="app store如何删除app id" itemprop="url">app store如何删除app id</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-05T09:01:44.000Z" itemprop="datePublished"> 发表于 2017-04-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h4 id="删除app_id">删除app id</h4><ul>
+<li>刚建立的app id<br>  可以直接删除</li>
+<li>已经在使用的app id<br>  先删除profile，等所有相关的证书，profile删除完了，可以删除id</li>
+<li>已经线上发布的app id<br>  可以通过转让应用转移给需要的人</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/App-store/">App store</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/05/app-store如何删除app-id/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/04/05/app-store如何删除app-id/" data-count-type="comments">&nbsp;</a>
 	
 </div>
 
@@ -933,7 +941,7 @@
 			
 		
 			
-				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
@@ -945,7 +953,7 @@
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
 			
 		
 			
@@ -957,7 +965,7 @@
 			
 		
 			
-				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
 			
 		
 			
@@ -965,11 +973,11 @@
 			
 		
 			
-				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
 			
 		
 			
