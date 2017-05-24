@@ -25,3 +25,19 @@ date: 2017-05-05 09:40:32
 [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
 
 [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)参考链接http://laravelacademy.org/post/2774.html
+
+[laravel-modules](https://nwidart.com/laravel-modules/)
+
+
+#### 添加模块后使用事项
+* 添加laravel-modules
+
+  添加完成之后，需要修改项目根目录下的composer.json文件，添加autoloading PSR-4:
+  ```
+  /file: composer.json
+  "psr-4": {
+  "App": "app/",
+  "Modules": "modules/"
+  }
+  ```
+之后需要运行命令 `compser dump-autoload`
