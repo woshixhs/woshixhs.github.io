@@ -42,6 +42,12 @@ date: 2016-12-14 13:45:05
 	https://github.com/WYseven/vue2-basic-demo
 	有vue官网的demo代码
 ```
+
+* vuerouteDemo
+```
+https://github.com/vuejs/vue-router
+里面有sample代码
+```
 * vuexDemo
 ```
 	https://github.com/vuejs/vuex
