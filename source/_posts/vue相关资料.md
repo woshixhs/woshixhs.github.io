@@ -34,6 +34,8 @@ date: 2016-12-14 13:45:05
 
 * [Webpack](https://webpack.js.org/)
 
+  [中文指南](http://zhaoda.net/webpack-handbook/index.html)
+
 #入门demo
 
 * vueDemo
