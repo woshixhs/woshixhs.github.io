@@ -97,33 +97,33 @@ tags:
 	git branch -a 所有
 	```
 #####**撤销修改**
-修改了内容,不过没有通过git add file，添加到stash
+* Untracked files(use "git add <file>..." to include in what will be committed)
+```
+git clean -fdx
+把没有tracked的文件放弃
+```
 
-单个文件
+* tracked files(use "git reset HEAD <file>..." to unstage)
+```
+git reset HEAD <file>
+git reset HEAD .
+把当前文件夹下文件都unstage
+```
+*  Changes not staged for commit:
 
+  (use "git add <file>..." to update what will be committed)
+
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	```
+	单个文件
 	git checkout -- file
-	discard file, file修改内容被放弃
-
-所有文件
-
+	所有文件
 	git checkout -- .
-	当前目录的所有问题放弃
-
-
-如果这个时候，已经通过git add 添加到stash，还没有push
-
-	git reset HEAD <file>...
-	把暂存区的修改撤销掉（unstage），重新放回工作区：
-
-
-添加到文件，还没有被tracked
-
-	git clean -fdx
-	把没有tracked的文件放弃
-
+	```
 
 #####**回撤版本**
-
+未添加
 
 
 #####**创建标签**
