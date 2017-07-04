@@ -655,20 +655,21 @@
 <h5 id="删除远程分支"><strong>删除远程分支</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; --delete &lt;远程分知名&gt;</span><br><span class="line">git push origin --delete bugfix</span><br></pre></td></tr></table></figure></span>
 </code></pre><h5 id="删除本地分支"><strong>删除本地分支</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d xxx,</span><br></pre></td></tr></table></figure></span>
 </code></pre><h5 id="查看分支命令"><strong>查看分支命令</strong></h5><pre><code><span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch  本地</span><br><span class="line">git branch -r 远程</span><br><span class="line">git branch -a 所有</span><br></pre></td></tr></table></figure></span>
-</code></pre><h5 id="撤销修改"><strong>撤销修改</strong></h5><p>修改了内容,不过没有通过git add file，添加到stash</p>
-<p>单个文件</p>
-<pre><code>git checkout -- <span class="keyword">file</span>
-<span class="keyword">discard</span> <span class="keyword">file</span>, <span class="keyword">file</span>修改内容被放弃
-</code></pre><p>所有文件</p>
-<pre><code>git checkout <span class="comment">-- .</span>
-当前目录的所有问题放弃
-</code></pre><p>如果这个时候，已经通过git add 添加到stash，还没有push</p>
-<pre><code>git reset HEAD &lt;file&gt;<span class="keyword">...</span>
-把暂存区的修改撤销掉（unstage），重新放回工作区：
-</code></pre><p>添加到文件，还没有被tracked</p>
-<pre><code><span class="title">git</span> clean -fdx
-把没有tracked的文件放弃
-</code></pre><h5 id="回撤版本"><strong>回撤版本</strong></h5><h5 id="创建标签"><strong>创建标签</strong></h5><pre><code>git tag &lt;<span class="property">name</span>&gt;
+</code></pre><h5 id="撤销修改"><strong>撤销修改</strong></h5><ul>
+<li><p>Untracked files(use “git add <file>…” to include in what will be committed)</file></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clean -fdx</span><br><span class="line">把没有tracked的文件放弃</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tracked files(use “git reset HEAD <file>…” to unstage)</file></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br><span class="line">git reset HEAD .</span><br><span class="line">把当前文件夹下文件都unstage</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Changes not staged for commit:</p>
+<p>(use “git add <file>…” to update what will be committed)</file></p>
+<p>(use “git checkout — <file>…” to discard changes in working directory)</file></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">单个文件</span><br><span class="line">git checkout -- file</span><br><span class="line">所有文件</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="回撤版本"><strong>回撤版本</strong></h5><p>未添加</p>
+<h5 id="创建标签"><strong>创建标签</strong></h5><pre><code>git tag &lt;<span class="property">name</span>&gt;
 </code></pre><p>默认标签是打在最新提交的commit上的，可以打在一个commit id上面，</p>
 <pre><code>git tag &lt;<span class="property">name</span>&gt; commit <span class="property">id</span>
 </code></pre><p>这样就算当时没打标签，也可以补打标签</p>
@@ -956,11 +957,15 @@
 			
 		
 			
-				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Laravel/" title="Laravel">Laravel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
 			
 		
 			
@@ -972,11 +977,7 @@
 			
 		
 			
-				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+				<li><a href="/tags/vue/" title="vue">vue<sup>1</sup></a></li>
 			
 		
 			
@@ -984,7 +985,7 @@
 			
 		
 			
-				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
