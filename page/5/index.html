@@ -80,6 +80,91 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/19/ionic-问题汇总/" title="ionic 问题汇总" itemprop="url">ionic 问题汇总</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-19T12:50:35.000Z" itemprop="datePublished"> 发表于 2015-04-19</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="Error:_spawn_EACCES"><strong>Error: spawn EACCES</strong></h5><pre><code><span class="string">Error:</span> spawn EACCES
+at exports._errnoException (util.<span class="string">js:</span><span class="number">746</span>:<span class="number">11</span>)
+at ChildProcess.spawn (child_process.<span class="string">js:</span><span class="number">1162</span>:<span class="number">11</span>)
+at Object.exports.spawn (child_process.<span class="string">js:</span><span class="number">995</span>:<span class="number">9</span>)
+at Object.exports.spawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>superspawn.<span class="string">js:</span><span class="number">100</span>:<span class="number">31</span>)
+at runScriptViaChildProcessSpawn (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">188</span>:<span class="number">23</span>)
+at runScript (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">131</span>:<span class="number">16</span>)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/hooks/</span>HooksRunner.<span class="string">js:</span><span class="number">114</span>:<span class="number">20</span>
+at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
+at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
+at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
+解决方案: 先执行命令
+ionic hooks add
+</code></pre><p><a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
+<h5 id="Error:_EACCES,_permission_denied"><strong>Error: EACCES, permission denied</strong></h5><pre><code><span class="string">Error:</span> EACCES, permission denied <span class="string">'/home/kim/work/web_html5_app/sidemunuDemo/platforms/android/assets/www/cordova_plugins.js'</span>
+at Error (native)
+at Object.fs.openSync (fs.<span class="string">js:</span><span class="number">500</span>:<span class="number">18</span>)
+at Object.fs.writeFileSync (fs.<span class="string">js:</span><span class="number">1099</span>:<span class="number">15</span>)
+at Object.handlePrepare (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/plugman/</span>prepare.<span class="string">js:</span><span class="number">155</span>:<span class="number">8</span>)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">108</span>:<span class="number">21</span>
+at Array.map (native)
+at <span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>src<span class="regexp">/cordova/</span>prepare.<span class="string">js:</span><span class="number">73</span>:<span class="number">40</span>
+at _fulfilled (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">787</span>:<span class="number">54</span>)
+at self.promiseDispatch.done (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">816</span>:<span class="number">30</span>)
+at Promise.promise.promiseDispatch (<span class="regexp">/usr/</span>local<span class="regexp">/lib/</span>node_modules<span class="regexp">/cordova/</span>node_modules<span class="regexp">/cordova-lib/</span>node_modules<span class="regexp">/q/</span>q.<span class="string">js:</span><span class="number">749</span>:<span class="number">13</span>)
+解决方案:执行以下命令
+sudo chmod -R a+rwx /appfolder
+</code></pre><p>   <a href="http://forum.ionicframework.com/t/how-to-fix-this-error-spawn-eacces/20490" target="_blank" rel="external">参考</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ionic/">ionic</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/19/ionic-问题汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/19/ionic-问题汇总/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/19/ionic-调试工具/" title="ionic 调试工具" itemprop="url">ionic 调试工具</a>
   </h1>
   <p class="article-author">By
@@ -741,74 +826,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/03/27/Java-公共技术汇总/" title="Java 公共技术汇总" itemprop="url">Java 公共技术汇总</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-27T14:02:19.000Z" itemprop="datePublished"> 发表于 2015-03-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h5 id="Java_Annotation注解"><strong>Java Annotation注解</strong></h5><p>注解应用比较广泛, 有几种类型,<a href="http://codekk.com/open-source-project-analysis/detail/Android/Trinea/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8BJava%20%E6%B3%A8%E8%A7%A3%20Annotation" target="_blank" rel="external">参考文章</a></p>
-<h5 id="Java动态代理技术"><strong>Java动态代理技术</strong></h5><p><a href="http://codekk.com/open-source-project-analysis/detail/Android/Caij/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8BJava%20%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86" target="_blank" rel="external">参考文章</a></p>
-<h5 id="Java_依赖注入">Java 依赖注入</h5><p><a href="http://codekk.com/open-source-project-analysis/detail/Android/%E6%89%94%E7%89%A9%E7%BA%BF/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8B%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5" target="_blank" rel="external">参考文章</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Java/">Java</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/基础技术/">基础技术</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/03/27/Java-公共技术汇总/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/27/Java-公共技术汇总/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next<span></span></a>
   </nav>
 
 </div>
@@ -896,6 +916,10 @@
 		  
 		
 		  
+			<li><a href="/categories/web服务器/" title="web服务器">web服务器<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/技术书籍/" title="技术书籍">技术书籍<sup>1</sup></a></li>
 		  
 		
@@ -957,7 +981,7 @@
 			
 		
 			
-				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
 			
 		
 			
@@ -965,7 +989,7 @@
 			
 		
 			
-				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
 			
 		
 			
@@ -973,11 +997,15 @@
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/vue/" title="vue">vue<sup>1</sup></a></li>
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
 			
 		
 			
@@ -985,15 +1013,11 @@
 			
 		
 			
-				<li><a href="/tags/原理分析/" title="原理分析">原理分析<sup>1</sup></a></li>
+				<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/goagent/" title="goagent">goagent<sup>1</sup></a></li>
 			
 		
 		</ul>
