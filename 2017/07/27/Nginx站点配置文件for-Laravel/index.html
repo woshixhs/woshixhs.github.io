@@ -4,29 +4,44 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>npm 使用 | Kim&#39;s blog</title>
+    <title>Nginx站点配置文件for Laravel | Kim&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kim">
     
 
     
-    <meta name="description" content="npm 常用命令dcode12345npm install &amp;lt;package name&amp;gt; -gnpm uninstall &amp;lt;package name&amp;gt;npm search &amp;lt;package name&amp;gt;npm ls -gnpm update -g
-参考
-npm 更新123npm -g update如果更新的版本有问题,可以使用预览版本npm i -g npm@ne">
+    <meta name="description" content="查看资料
+Nginx 站点配置文件 for Laravel 5 (参考)
+
+请给你的 Laravel 一份更好的 Nginx 配置
+
+A better way to run PHP-FPM
+
+Ubuntu 14.04 上使用 Nginx 部署 Laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm 使用">
-<meta property="og:url" content="http://yoursite.com/2015/04/16/npm-使用/index.html">
+<meta property="og:title" content="Nginx站点配置文件for Laravel">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/Nginx站点配置文件for-Laravel/index.html">
 <meta property="og:site_name" content="Kim's blog">
-<meta property="og:description" content="npm 常用命令dcode12345npm install &amp;lt;package name&amp;gt; -gnpm uninstall &amp;lt;package name&amp;gt;npm search &amp;lt;package name&amp;gt;npm ls -gnpm update -g
-参考
-npm 更新123npm -g update如果更新的版本有问题,可以使用预览版本npm i -g npm@ne">
-<meta property="og:updated_time" content="2017-03-10T04:29:43.000Z">
+<meta property="og:description" content="查看资料
+Nginx 站点配置文件 for Laravel 5 (参考)
+
+请给你的 Laravel 一份更好的 Nginx 配置
+
+A better way to run PHP-FPM
+
+Ubuntu 14.04 上使用 Nginx 部署 Laravel">
+<meta property="og:updated_time" content="2017-07-27T08:37:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm 使用">
-<meta name="twitter:description" content="npm 常用命令dcode12345npm install &amp;lt;package name&amp;gt; -gnpm uninstall &amp;lt;package name&amp;gt;npm search &amp;lt;package name&amp;gt;npm ls -gnpm update -g
-参考
-npm 更新123npm -g update如果更新的版本有问题,可以使用预览版本npm i -g npm@ne">
+<meta name="twitter:title" content="Nginx站点配置文件for Laravel">
+<meta name="twitter:description" content="查看资料
+Nginx 站点配置文件 for Laravel 5 (参考)
+
+请给你的 Laravel 一份更好的 Nginx 配置
+
+A better way to run PHP-FPM
+
+Ubuntu 14.04 上使用 Nginx 部署 Laravel">
 
     
     <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
@@ -85,14 +100,14 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/16/npm-使用/" title="npm 使用" itemprop="url">npm 使用</a>
+      <a href="/2017/07/27/Nginx站点配置文件for-Laravel/" title="Nginx站点配置文件for Laravel" itemprop="url">Nginx站点配置文件for Laravel</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-16T15:07:34.000Z" itemprop="datePublished"> 发表于 2015-04-16</time>
+    <time datetime="2017-07-27T07:25:46.000Z" itemprop="datePublished"> 发表于 2017-07-27</time>
     
   </p>
 </header>
@@ -101,41 +116,18 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_常用命令d"><span class="toc-number">1.</span> <span class="toc-text">npm 常用命令d</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_更新"><span class="toc-number">2.</span> <span class="toc-text">npm 更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_添加镜像"><span class="toc-number">3.</span> <span class="toc-text">npm 添加镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#node_runtime_更新"><span class="toc-number">4.</span> <span class="toc-text">node runtime 更新</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number"></span> <span class="toc-text">参考文档</span></a>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看资料"><span class="toc-number">1.</span> <span class="toc-text">查看资料</span></a></li></ol>
 		
 		</div>
 		
-		<h5 id="npm_常用命令d"><strong>npm 常用命令</strong>d</h5><figure class="highlight plain"><figcaption><span>code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;package name&gt; -g</span><br><span class="line">npm uninstall &lt;package name&gt;</span><br><span class="line">npm search &lt;package name&gt;</span><br><span class="line">npm ls -g</span><br><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
-<p><a href="http://dreamerslab.com/blog/tw/npm-basic-commands/" target="_blank" rel="external">参考</a></p>
-<h5 id="npm_更新"><strong>npm 更新</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm -g update</span><br><span class="line">如果更新的版本有问题,可以使用预览版本</span><br><span class="line">npm i -g npm@next 预览版本,</span><br></pre></td></tr></table></figure>
-<p><a href="http://segmentfault.com/q/1010000002437961" target="_blank" rel="external">参考</a></p>
-<h5 id="npm_添加镜像"><strong>npm 添加镜像</strong></h5><p>使用npm下载比较慢,可以使用如下的命令添加镜像</p>
-<ul>
-<li><p>通过config命令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org </span><br><span class="line">npm info underscore （如果上面配置正确这个命令会有字符串response）</span><br></pre></td></tr></table></figure>
+		<h2 id="查看资料">查看资料</h2><ul>
+<li><p><a href="https://segmentfault.com/a/1190000004478020" target="_blank" rel="external">Nginx 站点配置文件 for Laravel 5 (参考)</a></p>
 </li>
-<li><p>命令行指定</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --registry https://registry.npm.taobao.org info underscore</span><br></pre></td></tr></table></figure>
+<li><p><a href="https://yii.im/posts/the-right-way-to-set-nginx-for-laravel/" target="_blank" rel="external">请给你的 Laravel 一份更好的 Nginx 配置</a></p>
 </li>
-<li><p>编辑 ~/.npmrc 加入下面内容</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p><a href="https://cnodejs.org/topic/4f9904f9407edba21468f31e" target="_blank" rel="external">参考</a></p>
+<li><p><a href="https://ma.ttias.be/a-better-way-to-run-php-fpm" target="_blank" rel="external">A better way to run PHP-FPM</a></p>
 </li>
-</ul>
-<h5 id="node_runtime_更新"><strong>node runtime 更新</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n</span><br><span class="line">n stable</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.jb51.net/article/52409.htm" target="_blank" rel="external">参考</a></p>
-<h3 id="参考文档">参考文档</h3><ul>
-<li><p><a href="https://segmentfault.com/a/1190000004894400" target="_blank" rel="external">NPM使用手册</a></p>
-</li>
-<li><p><a href="http://www.jianshu.com/p/e958a74a0fd7" target="_blank" rel="external">NPM简明使用教程</a></p>
-</li>
-<li><p><a href="http://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="external">NPM使用介绍</a></p>
-</li>
-<li><p><a href="https://docs.npmjs.com/" target="_blank" rel="external">NPM官方文档</a></p>
-</li>
-<li><p><a href="https://npm.taobao.org/" target="_blank" rel="external">淘宝NPM镜像</a></p>
-</li>
-<li><p><a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="external">npm 模块安装机制简介</a></p>
+<li><p><a href="https://github.com/huanghua581/laravel-getting-started/wiki/Ubuntu-14.04-%E4%B8%8A%E4%BD%BF%E7%94%A8-Nginx-%E9%83%A8%E7%BD%B2-Laravel" target="_blank" rel="external">Ubuntu 14.04 上使用 Nginx 部署 Laravel</a></p>
 </li>
 </ul>
   
@@ -145,9 +137,14 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/npm/">npm</a>
+  <a class="article-category-link" href="/categories/web服务器/">web服务器</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Nginx/">Nginx</a>
+  </div>
 
 </div>
 
@@ -155,7 +152,7 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/04/16/npm-使用/" data-title="npm 使用 | Kim&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/07/27/Nginx站点配置文件for-Laravel/" data-title="Nginx站点配置文件for Laravel | Kim&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -168,19 +165,11 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/17/linux-android-device-调试/" title="linux android device 调试">
-  <strong>上一篇：</strong><br/>
-  <span>
-  linux android device 调试</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/10/iOS-UI-Signal分析/"  title="iOS UI Signal分析">
+<a href="/2017/07/27/Mac-开发环境配置/"  title="Mac 开发环境配置">
  <strong>下一篇：</strong><br/> 
- <span>iOS UI Signal分析
+ <span>Mac 开发环境配置
 </span>
 </a>
 </div>
@@ -189,7 +178,7 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/04/16/npm-使用/" data-title="npm 使用" data-url="http://yoursite.com/2015/04/16/npm-使用/"></div>
+	<div class="ds-thread" data-thread-key="2017/07/27/Nginx站点配置文件for-Laravel/" data-title="Nginx站点配置文件for Laravel" data-url="http://yoursite.com/2017/07/27/Nginx站点配置文件for-Laravel/"></div>
 </section>
 
 
@@ -199,7 +188,7 @@ npm 更新123npm -g update如果更新的版本有问题,可以使用预览版�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_常用命令d"><span class="toc-number">1.</span> <span class="toc-text">npm 常用命令d</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_更新"><span class="toc-number">2.</span> <span class="toc-text">npm 更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#npm_添加镜像"><span class="toc-number">3.</span> <span class="toc-text">npm 添加镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#node_runtime_更新"><span class="toc-number">4.</span> <span class="toc-text">node runtime 更新</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-number"></span> <span class="toc-text">参考文档</span></a>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看资料"><span class="toc-number">1.</span> <span class="toc-text">查看资料</span></a></li></ol>
  
   </div>
 
