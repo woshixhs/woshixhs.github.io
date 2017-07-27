@@ -1,8 +1,9 @@
 title: Mac 开发环境配置
-date: 2017-07-27 15:18:04
 categories: Mac开发环境
+date: 2017-07-27 15:18:04
 tags:
 ---
+
 
 ##开发环境配置
 * [程序员如何优雅地使用 macOS？](https://www.zhihu.com/question/20873070)
