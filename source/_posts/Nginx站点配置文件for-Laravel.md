@@ -1,8 +1,9 @@
 title: Nginx站点配置文件for Laravel
-date: 2017-07-27 15:25:46
 categories: web服务器
 tags: Nginx
+date: 2017-07-27 15:25:46
 ---
+
 
 ## 查看资料
 * [Nginx 站点配置文件 for Laravel 5 (参考)](https://segmentfault.com/a/1190000004478020)
