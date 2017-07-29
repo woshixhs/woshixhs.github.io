@@ -80,6 +80,64 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/02/iOS-App安装工具/" title="iOS App安装工具" itemprop="url">iOS App安装工具</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-02T01:45:57.000Z" itemprop="datePublished"> 发表于 2015-04-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h5 id="app_tools"><strong>app tools</strong></h5><p><a href="http://www.itools.cn/" target="_blank" rel="external">iTools</a> 最新的版本,只有收费版本可以看到sanbox中的内容<br><a href="http://www.i-funbox.com/ifunboxmac/" target="_blank" rel="external">iFunBox</a> </p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/02/iOS-App安装工具/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/04/02/iOS-App安装工具/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/02/LKDBHelp源码分析/" title="LKDBHelp源码分析" itemprop="url">LKDBHelp源码分析</a>
   </h1>
   <p class="article-author">By
@@ -748,125 +806,6 @@ git config --global user<span class="class">.email</span> username@xxx.com
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/03/21/iOS消息推送/" title="iOS消息推送" itemprop="url">iOS消息推送</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-21T13:43:36.000Z" itemprop="datePublished"> 发表于 2015-03-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>iOS 推送原理</p>
-</blockquote>
-<p>这个可以参考这个<a href="https://blog.leancloud.cn/1163/" target="_blank" rel="external">AVOS Cloud</a>文章</p>
-<h5 id="iOS_证书制作">iOS 证书制作</h5><pre><code>证书分为开发证书, <span class="variable">Adhoc</span>证书, 发布版证书.
-</code></pre><h5 id="iOS_推送证书过期处理">iOS 推送证书过期处理</h5><pre><code>证书过一年会过期,需要重新revoke生成,最好csr文件是同一个.推送只是跟<span class="keyword">push</span> APNS token有关系，跟其他证书无关.(特别是服务端)
-</code></pre><h6 id="iOS_代码运行逻辑">iOS 代码运行逻辑</h6><pre><code>推送发生的时候，有<span class="number">3</span>种情况
-- 前台运行
-  这种情况下，程序不会有任何提示音，程序会执行以下的代码：
-          - (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
-          - didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo  
-          - fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler{
-             //userInfo 会有推送的内容
-         }
-
-- 后台运行
-    会有推送提示声音，内容等。这个时候，会有<span class="number">3</span>种行为，可以重新进入到程序，<span class="number">2</span>种不同的表现形式
-     - 点击程序icon，双击home，点击程序这<span class="number">2</span>种行为
-       这种情况，不执行任何代码。
-     - 通过推送消息栏，进入程序，程序会执行以下的代码：
-       - (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
-       - didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo 
-       - fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler {
-            //userInfo 会有推送的内容
-      }
-- 程序关闭
-  会有推送提示声音，内容等。这个时候如果按照正常的方式进入程序，一切都一样，如果是通过通知栏的方式进入的程序，会有以下的区别。首先程序启动的时候，
-  (<span class="type">BOOL</span>)application:(<span class="type">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="type">NSDictionary</span> *)launchOptions{
-  launchOptions 会有值，可以使用key，判断是远程推送的key，<span class="type">UIRemoteNotificationType</span>
-  }
-  接下来，继续会调用以下的代码：
-  (<span class="type">void</span>)application:(<span class="type">UIApplication</span> *)application 
-       didReceiveRemoteNotification:(<span class="type">NSDictionary</span> *)userInfo 
-       fetchCompletionHandler:(<span class="type">void</span> (^)(<span class="type">UIBackgroundFetchResult</span> <span class="literal">result</span>))completionHandler {
-            //userInfo 会有推送的内容
-      }
-</code></pre><h6 id="iOS_推送提示声音如何修改">iOS 推送提示声音如何修改</h6><pre><code><span class="bullet">1. </span>服务端， 在payload中，json串中,  sound: push.m4a,  
-<span class="bullet">2. </span>iOS, 添加跟服务端一样的声音文件到项目工程中即可
-只要完成2项，就可以完成替换声音
-</code></pre><h5 id="iOS推送测试">iOS推送测试</h5><pre><code>可以使用<span class="keyword">Mac</span> 上的PushMeBaby做测试，不过目前测试失败，估计API升级导致的原因。
-</code></pre><p>可以参考如下的文章<br>     Php的测试方案也失效了，具体没去了解原因(估计是证书制作的方法换了)。</p>
-<ul>
-<li><a href="http://www.cnblogs.com/gpwzw/archive/2012/03/31/apple_push_notification_services_tutorial_part_1-2.html" target="_blank" rel="external">http://www.cnblogs.com/gpwzw/archive/2012/03/31/apple_push_notification_services_tutorial_part_1-2.html</a></li>
-<li><a href="http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1" target="_blank" rel="external">http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1</a></li>
-</ul>
-<p>有效的php证书制作方法:</p>
-<h5 id="Java推送">Java推送</h5><p>Java推送用的比较多的开源lib,<a href="https://github.com/notnoop/java-apns" target="_blank" rel="external">java-apns</a>, 还有JavaPNS,2个lib的比较:</p>
-<ul>
-<li><strong>JavaPNS</strong> <pre><code>优点是简单，但缺点也很明显，效率不高，没有考虑各种通知发送出错的情况。这个库适合那些每天通知发送量特别小，并且用户收没收到也无所谓的应用
-</code></pre></li>
-<li><p><strong>java-apns</strong><br>   notnoop的Java APNS就要强大很多，目前它应该是使用最多的Java类库。随着使用的加深，发现它有很多不完善之处。最严重的问题是，运行一段时间后就死掉了，通知再也发不出去了，但重启下就又恢复了。经查，应该是死锁了，通知堆积在内存中并没有真正发出去。这对于对消息送达率和及时性要求非常高的聊天软件来说，是不能忍受的。</p>
-<pre><code>可以使用java<span class="attribute">-apns</span>的项目,用来测试iOS 的推送, 比较方便<span class="built_in">.</span>遇到的问题，会经常性出现，ssl <span class="keyword">handle</span>建立失败，被对方关闭的问题。
-</code></pre></li>
-<li><strong>pushy</strong><br>  测试下来，当有很多数据的情况下，会有2~5分钟的延迟推送现象发生。</li>
-</ul>
-<hr>
-<p>目前,暂时没有分析其他java lib, 目前有<a href="https://github.com/RamosLi/dbay-apns-for-java" target="_blank" rel="external">dbay-apns-for-java</a> .<a href="https://github.com/relayrides/pushy" target="_blank" rel="external">pushy</a>, 后续需要测试分析,性能,<br>主要是对长链接的处理.(未完待续)</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS推送/">iOS推送</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/03/21/iOS消息推送/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/03/21/iOS消息推送/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/5/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next<span></span></a>
@@ -922,6 +861,10 @@ git config --global user<span class="class">.email</span> username@xxx.com
 		
 		  
 			<li><a href="/categories/Terminal/" title="Terminal">Terminal<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Tools/" title="Tools">Tools<sup>1</sup></a></li>
 		  
 		
 		  
@@ -1046,11 +989,11 @@ git config --global user<span class="class">.email</span> username@xxx.com
 			
 		
 			
-				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/webpack/" title="webpack">webpack<sup>1</sup></a></li>
+				<li><a href="/tags/vue/" title="vue">vue<sup>1</sup></a></li>
 			
 		
 			
@@ -1058,11 +1001,11 @@ git config --global user<span class="class">.email</span> username@xxx.com
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>1</sup></a></li>
+				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/基础技术/" title="基础技术">基础技术<sup>1</sup></a></li>
+				<li><a href="/tags/Composer/" title="Composer">Composer<sup>1</sup></a></li>
 			
 		
 		</ul>
