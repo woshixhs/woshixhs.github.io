@@ -4,38 +4,50 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Axure8.0-基础知识1-如何分组 | Kim&#39;s blog</title>
+    <title>visual box安装centos | Kim&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kim">
     
 
     
-    <meta name="description" content="Auxre 基础知识-基本元素介绍
-快速查找画布上的元素  打开菜单Menu-&amp;gt;View-&amp;gt;Pans-&amp;gt;Outline,画布上的所以元素，都会显示在这个区域，可以很方便的查找元素，并且拖放层级关系。
+    <meta name="description" content="visual box 安装 centos
+visual box 开始设置
+  对于生产机,选择mininal安装，选择英文语言。分区的选择,  设置swap分区等
 
-group  放在画布上的元素，如果要一起拖动，最好把一组元素添加到分组中，可以使用Group进行  分组，也可以使用Ungroup进行拆分。
+添加用户
+  最好不要使用root进行登录，而是需要新建1个用户来登录
+  12useradd  添加1个新用户passwd 为新用户设置密码
 
-lock  当元素已经固定好之后，">
+给一般用户sudo权限
+  12visudo使用这个命令，给生成的账号添加权限">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Axure8.0-基础知识1-如何分组">
-<meta property="og:url" content="http://yoursite.com/2016/11/06/Axure8-0-基础知识1-如何分组/index.html">
+<meta property="og:title" content="visual box安装centos">
+<meta property="og:url" content="http://yoursite.com/2017/07/30/visual-box安装centos/index.html">
 <meta property="og:site_name" content="Kim's blog">
-<meta property="og:description" content="Auxre 基础知识-基本元素介绍
-快速查找画布上的元素  打开菜单Menu-&amp;gt;View-&amp;gt;Pans-&amp;gt;Outline,画布上的所以元素，都会显示在这个区域，可以很方便的查找元素，并且拖放层级关系。
+<meta property="og:description" content="visual box 安装 centos
+visual box 开始设置
+  对于生产机,选择mininal安装，选择英文语言。分区的选择,  设置swap分区等
 
-group  放在画布上的元素，如果要一起拖动，最好把一组元素添加到分组中，可以使用Group进行  分组，也可以使用Ungroup进行拆分。
+添加用户
+  最好不要使用root进行登录，而是需要新建1个用户来登录
+  12useradd  添加1个新用户passwd 为新用户设置密码
 
-lock  当元素已经固定好之后，">
-<meta property="og:updated_time" content="2017-03-10T04:29:43.000Z">
+给一般用户sudo权限
+  12visudo使用这个命令，给生成的账号添加权限">
+<meta property="og:updated_time" content="2017-08-27T14:47:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Axure8.0-基础知识1-如何分组">
-<meta name="twitter:description" content="Auxre 基础知识-基本元素介绍
-快速查找画布上的元素  打开菜单Menu-&amp;gt;View-&amp;gt;Pans-&amp;gt;Outline,画布上的所以元素，都会显示在这个区域，可以很方便的查找元素，并且拖放层级关系。
+<meta name="twitter:title" content="visual box安装centos">
+<meta name="twitter:description" content="visual box 安装 centos
+visual box 开始设置
+  对于生产机,选择mininal安装，选择英文语言。分区的选择,  设置swap分区等
 
-group  放在画布上的元素，如果要一起拖动，最好把一组元素添加到分组中，可以使用Group进行  分组，也可以使用Ungroup进行拆分。
+添加用户
+  最好不要使用root进行登录，而是需要新建1个用户来登录
+  12useradd  添加1个新用户passwd 为新用户设置密码
 
-lock  当元素已经固定好之后，">
+给一般用户sudo权限
+  12visudo使用这个命令，给生成的账号添加权限">
 
     
     <link rel="alternative" href="/atom.xml" title="Kim&#39;s blog" type="application/atom+xml">
@@ -94,14 +106,14 @@ lock  当元素已经固定好之后，">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/06/Axure8-0-基础知识1-如何分组/" title="Axure8.0-基础知识1-如何分组" itemprop="url">Axure8.0-基础知识1-如何分组</a>
+      <a href="/2017/07/30/visual-box安装centos/" title="visual box安装centos" itemprop="url">visual box安装centos</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://yoursite.com/about" title="Kim" target="_blank" itemprop="author">Kim</a>
 		
   <p class="article-time">
-    <time datetime="2016-11-06T04:07:22.000Z" itemprop="datePublished"> 发表于 2016-11-06</time>
+    <time datetime="2017-07-29T16:07:51.000Z" itemprop="datePublished"> 发表于 2017-07-30</time>
     
   </p>
 </header>
@@ -110,21 +122,113 @@ lock  当元素已经固定好之后，">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Auxre_基础知识-基本元素介绍"><span class="toc-number">1.</span> <span class="toc-text">Auxre 基础知识-基本元素介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速查找画布上的元素"><span class="toc-number">1.1.</span> <span class="toc-text">快速查找画布上的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#group"><span class="toc-number">1.2.</span> <span class="toc-text">group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lock"><span class="toc-number">1.3.</span> <span class="toc-text">lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Library"><span class="toc-number">1.4.</span> <span class="toc-text">Library</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#visual_box_安装_centos"><span class="toc-number">1.</span> <span class="toc-text">visual box 安装 centos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">2.</span> <span class="toc-text">参考资料</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Auxre_基础知识-基本元素介绍">Auxre 基础知识-基本元素介绍</h2><ul>
-<li><h3 id="快速查找画布上的元素">快速查找画布上的元素</h3><p>  打开菜单Menu-&gt;View-&gt;Pans-&gt;Outline,画布上的所以元素，都会显示在这个区域，可以很方便的查找元素，并且拖放层级关系。</p>
+		<h2 id="visual_box_安装_centos">visual box 安装 centos</h2><ul>
+<li><p>visual box 开始设置</p>
+<p>  对于生产机,选择mininal安装，选择英文语言。分区的选择,<br>  设置swap分区等</p>
 </li>
-<li><h3 id="group">group</h3><p>  放在画布上的元素，如果要一起拖动，最好把一组元素添加到分组中，可以使用Group进行<br>  分组，也可以使用Ungroup进行拆分。</p>
+<li><p>添加用户</p>
+<p>  最好不要使用root进行登录，而是需要新建1个用户来登录</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd  添加1个新用户</span><br><span class="line">passwd 为新用户设置密码</span><br></pre></td></tr></table></figure>
 </li>
-<li><h3 id="lock">lock</h3><p>  当元素已经固定好之后，可以使用group，lock，锁定元素的位置，这样元素的位置就都固定了。不会变动。</p>
+<li><p>给一般用户sudo权限</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">visudo</span><br><span class="line">使用这个命令，给生成的账号添加权限</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置网络环境</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install net-tools</span><br><span class="line">centos7选择minal安装之后，一些基础的网络没有，所以先按照一些工具</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置网卡网络环境参数</p>
+<ul>
+<li><p>设置IP地址</p>
+<p>  说明：CentOS 7.x默认安装好之后是没有自动开启网络连接的！</p>
+<p>  cd  /etc/sysconfig/network-scripts/  #进入网络配置文件目录</p>
+<p>  vi  ifcfg-ens33  #编辑配置文件，添加修改以下内容</p>
+<p>  BOOTPROTO=static  #启用静态IP地址</p>
+<p>  ONBOOT=yes  #开启自动启用网络连接</p>
+<p>  IPADDR0=192.168.21.130  #设置IP地址</p>
+<p>  PREFIXO0=24  #设置子网掩码</p>
+<p>  GATEWAY0=192.168.21.2  #设置网关</p>
+<p>  DNS1=8.8.8.8  #设置主DNS</p>
+<p>  DNS2=8.8.4.4  #设置备DNS</p>
+<p>  :wq!  #保存退出</p>
+</li>
+<li><p>把网卡名称ifcfg-ens33改为ifcfg-eth0</p>
+<p>  CentOS 7.x系统中网卡命名规则被重新定义，可能会是”ifcfg-ens33”等，下面我们把网卡改为ifcfg-eth0这种。</p>
+<ol>
+<li><p>cd  /etc/sysconfig/network-scripts/</p>
+<p> mv  ifcfg-ens33  ifcfg-eth0  #修改名称</p>
+<p> vi  ifcfg-eth0  #编辑</p>
+<p> NAME=eth0   #修改</p>
+<p> DEVICE=eth0   #修改</p>
+<p> :wq! #保存退出</p>
+</li>
+<li><p>vi /etc/sysconfig/grub  #编辑</p>
+<p> 在”GRUB_CMDLINE_LINUX“变量中添加一句”net.ifnames=0 biosdevname=0“</p>
+<p> :wq! #保存退出</p>
+</li>
+<li><p>运行命令：grub2-mkconfig -o /boot/grub2/grub.cfg  #重新生成grub配置并更新内核参数</p>
+</li>
+<li><p>添加udev的规则</p>
+<p> 在”/etc/udev/rules.d“目录中创建一个网卡规则”70-persistent-net.rules“,并写入下面的语句:</p>
+<p> cd  /etc/udev/rules.d<br> vi  70-persistent-net.rules   #添加</p>
+<p> SUBSYSTEM==”net”,ACTION==”add”,DRIVERS==”?<em>“,ATTR{address}==”00:0c:29:1e:a3:77”,ATTR｛type｝==”1” ,KERNEL==”eth</em>“,NAME=”eth0”</p>
+<p> :wq! #保存退出</p>
+</li>
+<li><p>shutdown -r now  #重启系统</p>
+<p> 网卡已经更改为eth0</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>设置visual box的网络</p>
+<ol>
+<li><p>网卡1配置为NAT</p>
+</li>
+<li><p>网卡2配置为host-only</p>
+</li>
+</ol>
 </li>
 </ul>
 <ul>
-<li><h3 id="Library">Library</h3><p>  安装Axure之后，generate html，都会一个固定的位置，另外还有一个Libaray目录，把下载的library放在这个目录之下，可以很方便的加载Library，并且移除Library</p>
+<li><p>可以使用ssh登录虚拟机<br>  宿主机修改host 配置虚假机域名, 并且配置为密钥登录</p>
 </li>
+<li><p>共享文件夹</p>
+<ol>
+<li><p>电脑下载VBoxAdditions, <a href="http://download.virtualbox.org/virtualbox/5.1.26/VBoxGuestAdditions_5.1.26.iso" target="_blank" rel="external">http://download.virtualbox.org/virtualbox/5.1.26/VBoxGuestAdditions_5.1.26.iso</a>, 可以在<a href="http://download.virtualbox.org/virtualbox/查找" target="_blank" rel="external">http://download.virtualbox.org/virtualbox/查找</a></p>
+</li>
+<li><p>CentOS挂上光驱：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/cdrom /mnt/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将光驱内的文件夹复制到硬盘中。（如果直接在光驱中执行安装，会因为权限问题导致无法安装。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -R /mnt/ /usr/local/src/VBoxAdditions</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可选）安装前需要设置安装环境，如果已设置，那么这一步可以跳过：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y make gcc gcc-c++ kernel kernel-devel</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入文件夹，开始安装：./VBoxLinuxAdditions.run</p>
+</li>
+<li><p>启用共享文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t vboxsf 共享文件夹 本地文件夹</span><br></pre></td></tr></table></figure>
+<p>如何visual box设置了自动挂载，那么可以查看df</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="参考资料">参考资料</h2><ul>
+<li><a href="http://www.osyunwei.com/archives/10003.html" target="_blank" rel="external">CentOS 7.3.1611系统安装配置图解教程
+</a></li>
+<li><a href="http://www.chengxuyuans.com/Unix/83454.html" target="_blank" rel="external">CentOS 7 安装教程、硬盘分区、LVM、网络配置、软件源配置、制作
+</a></li>
+<li><a href="https://cnzhx.net/blog/virtualbox-vm-network-setting/" target="_blank" rel="external">VirtualBox 虚拟机的网络设置
+</a></li>
+<li><a href="https://linux.cn/article-8252-1.html" target="_blank" rel="external">如何配置 VirtualBox 中的客户机与宿主机之间的网络连接</a></li>
+<li><a href="http://cizixs.com/2017/03/09/virtualbox-network-mode-explained" target="_blank" rel="external">virtualbox 常用网络模式解释和配置</a></li>
+<li><a href="http://blog.csdn.net/suma110/article/details/54343686" target="_blank" rel="external">Mac系统VirtualBox中CentOS启用共享文件夹</a></li>
+<li><a href="http://www.linuxidc.com/Linux/2016-08/134292.htm" target="_blank" rel="external">在VirtualBox中与主机共享文件夹</a></li>
 </ul>
   
 	</div>
@@ -133,14 +237,9 @@ lock  当元素已经固定好之后，">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Axure/">Axure</a>
+  <a class="article-category-link" href="/categories/linux/">linux</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Axure/">Axure</a>
-  </div>
 
 </div>
 
@@ -148,7 +247,7 @@ lock  当元素已经固定好之后，">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/11/06/Axure8-0-基础知识1-如何分组/" data-title="Axure8.0-基础知识1-如何分组 | Kim&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/07/30/visual-box安装centos/" data-title="visual box安装centos | Kim&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -161,19 +260,11 @@ lock  当元素已经固定好之后，">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/11/06/Axure8-0基础教程/" title="Axure8.0基础教程">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Axure8.0基础教程</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/11/01/awesome-osx-command-line/"  title="awesome-osx-command-line">
+<a href="/2017/07/29/visual-stdio-code-doc/"  title="visual stdio code doc">
  <strong>下一篇：</strong><br/> 
- <span>awesome-osx-command-line
+ <span>visual stdio code doc
 </span>
 </a>
 </div>
@@ -182,7 +273,7 @@ lock  当元素已经固定好之后，">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/11/06/Axure8-0-基础知识1-如何分组/" data-title="Axure8.0-基础知识1-如何分组" data-url="http://yoursite.com/2016/11/06/Axure8-0-基础知识1-如何分组/"></div>
+	<div class="ds-thread" data-thread-key="2017/07/30/visual-box安装centos/" data-title="visual box安装centos" data-url="http://yoursite.com/2017/07/30/visual-box安装centos/"></div>
 </section>
 
 
@@ -192,7 +283,7 @@ lock  当元素已经固定好之后，">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Auxre_基础知识-基本元素介绍"><span class="toc-number">1.</span> <span class="toc-text">Auxre 基础知识-基本元素介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速查找画布上的元素"><span class="toc-number">1.1.</span> <span class="toc-text">快速查找画布上的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#group"><span class="toc-number">1.2.</span> <span class="toc-text">group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lock"><span class="toc-number">1.3.</span> <span class="toc-text">lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Library"><span class="toc-number">1.4.</span> <span class="toc-text">Library</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#visual_box_安装_centos"><span class="toc-number">1.</span> <span class="toc-text">visual box 安装 centos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">2.</span> <span class="toc-text">参考资料</span></a></li></ol>
  
   </div>
 
